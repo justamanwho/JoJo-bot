@@ -10,33 +10,39 @@ bot = TeleBot(token)
 digits, str_digits = [i for i in range(10)], [str(i) for i in range(10)]
 
 
-@bot.message_handler(commands=str_digits)
+def error_handling(message):
+    img = Image.open(f'digits-photos/wtf-am-i-reading.jpg')
+
+    bot.reply_to(message, 'Choose the digit from 0 to 9', reply_markup=markup)
+    bot.send_photo(message.chat.id, img)
+
+
+@bot.message_handler()
 def message_reply(message):
     text = message.text
     if text in str_digits:
         try:
             img = Image.open(f'digits-photos/{text}.png')
         except FileNotFoundError:
-            img = Image.open(f'digits-photos/{text}.jpg')
+            try:
+                img = Image.open(f'digits-photos/{text}.jpg')
+            except FileNotFoundError:
+                return error_handling(message)
+
         bot.send_photo(message.chat.id, img)
 
-    elif text in str_digits and len(text) == 2 and '/' == text[0]:
+    elif len(text) == 2 and '/' == text[0] and text[1] in str_digits:
         try:
             img = Image.open(f'digits-photos/{text[1]}.png')
         except FileNotFoundError:
-            img = Image.open(f'digits-photos/{text[1]}.jpg')
+            try:
+                img = Image.open(f'digits-photos/{text[1]}.jpg')
+            except FileNotFoundError:
+                return error_handling(message)
 
         bot.send_photo(message.chat.id, img)
-
     else:
-        img = Image.open(f'digits-photos/wtf-am-i-reading.jpg')
-
-        bot.reply_to(message, 'Choose the digit from 0 to 9', reply_markup=markup)
-        bot.send_photo(message.chat.id, img)
-
-
-
-
+        error_handling(message)
 
 
 if __name__ == '__main__':
