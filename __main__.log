@@ -1,0 +1,712 @@
+Message is received: 7
+Matched file: 7.png
+Image static/7.png has been converted
+Message is received: 0
+Matched file: 0.gif
+Message is received: 1
+Matched file: 1.png
+Image static/1.png has been converted
+Message is received: 2
+Matched file: 2.jpg
+Image static/2.jpg has been converted
+Message is received: 3
+Matched file: 3.jpg
+Image static/3.jpg has been converted
+Message is received: 4
+Matched file: 4.jpg
+Image static/4.jpg has been converted
+Message is received: 5
+Matched file: 5.jpg
+Image static/5.jpg has been converted
+Message is received: 6
+Matched file: 6.jpg
+Image static/6.jpg has been converted
+Message is received: 7
+Matched file: 7.png
+Image static/7.png has been converted
+Message is received: 8
+Matched file: 8.jpg
+Image static/8.jpg has been converted
+Message is received: 9
+Matched file: 9.png
+Image static/9.png has been converted
+Message is received: 8
+Matched file: 8.jpg
+Image static/8.jpg has been converted
+File <_io.BufferedReader name='static/your-next-line.png'> has been closed
+File <_io.BufferedReader name='static/jojo-the-world.gif'> has been closed
+File <_io.BufferedReader name='static/omg.jpg'> has been closed
+File <_io.BufferedReader name='static/dio-hoho.png'> has been closed
+File <_io.BufferedReader name='static/yare-yare.jpg'> has been closed
+File <_io.BufferedReader name='static/hayato.jfif'> has been closed
+File <_io.BufferedReader name='static/egg.png'> has been closed
+File <_io.BufferedReader name='static/0.gif'> has been closed
+File <_io.BufferedReader name='static/1.png'> has been closed
+File <_io.BufferedReader name='static/2.jpg'> has been closed
+File <_io.BufferedReader name='static/3.jpg'> has been closed
+File <_io.BufferedReader name='static/4.jpg'> has been closed
+File <_io.BufferedReader name='static/5.jpg'> has been closed
+File <_io.BufferedReader name='static/6.jpg'> has been closed
+File <_io.BufferedReader name='static/7.png'> has been closed
+File <_io.BufferedReader name='static/8.jpg'> has been closed
+File <_io.BufferedReader name='static/9.png'> has been closed
+File <_io.BufferedReader name='static/wtf-am-i-reading.jpg'> has been closed
+File your-next-line.png has been preloaded.
+File jojo-the-world.gif has been preloaded.
+File omg.jpg has been preloaded.
+File dio-hoho.png has been preloaded.
+File yare-yare.jpg has been preloaded.
+File hayato.jfif has been preloaded.
+File yaro.jfif has been preloaded.
+File egg.png has been preloaded.
+File 0.gif has been preloaded.
+File 1.png has been preloaded.
+File 2.jpg has been preloaded.
+File 3.jpg has been preloaded.
+File 4.jpg has been preloaded.
+File 5.jpg has been preloaded.
+File 6.jpg has been preloaded.
+File 7.png has been preloaded.
+File 8.jpg has been preloaded.
+File 9.png has been preloaded.
+File wtf-am-i-reading.jpg has been preloaded.
+Message is received: yaro
+Matched file: yaro.jfif
+File <_io.BufferedReader name='static/your-next-line.png'> has been closed
+File <_io.BufferedReader name='static/jojo-the-world.gif'> has been closed
+File <_io.BufferedReader name='static/omg.jpg'> has been closed
+File <_io.BufferedReader name='static/dio-hoho.png'> has been closed
+File <_io.BufferedReader name='static/yare-yare.jpg'> has been closed
+File <_io.BufferedReader name='static/hayato.jfif'> has been closed
+File <_io.BufferedReader name='static/yaro.jfif'> has been closed
+File <_io.BufferedReader name='static/egg.png'> has been closed
+File <_io.BufferedReader name='static/0.gif'> has been closed
+File <_io.BufferedReader name='static/1.png'> has been closed
+File <_io.BufferedReader name='static/2.jpg'> has been closed
+File <_io.BufferedReader name='static/3.jpg'> has been closed
+File <_io.BufferedReader name='static/4.jpg'> has been closed
+File <_io.BufferedReader name='static/5.jpg'> has been closed
+File <_io.BufferedReader name='static/6.jpg'> has been closed
+File <_io.BufferedReader name='static/7.png'> has been closed
+File <_io.BufferedReader name='static/8.jpg'> has been closed
+File <_io.BufferedReader name='static/9.png'> has been closed
+File <_io.BufferedReader name='static/wtf-am-i-reading.jpg'> has been closed
+File your-next-line.png has been preloaded.
+File jojo-the-world.gif has been preloaded.
+File omg.jpg has been preloaded.
+File dio-hoho.png has been preloaded.
+File yare-yare.jpg has been preloaded.
+File hayato.jfif has been preloaded.
+File yaro.jfif has been preloaded.
+File egg.png has been preloaded.
+File 0.gif has been preloaded.
+File 1.png has been preloaded.
+File 2.jpg has been preloaded.
+File 3.jpg has been preloaded.
+File 4.jpg has been preloaded.
+File 5.jpg has been preloaded.
+File 6.jpg has been preloaded.
+File 7.png has been preloaded.
+File 8.jpg has been preloaded.
+File 9.png has been preloaded.
+File wtf-am-i-reading.jpg has been preloaded.
+Message is received: yaro
+Matched file: yaro.jfif
+Image static/yaro.jfif has been sent
+Message is received: YAROOO
+Incorrect message: YAROOO
+Image static/wtf-am-i-reading.jpg has been sent
+File <_io.BufferedReader name='static/your-next-line.png'> has been closed
+File <_io.BufferedReader name='static/jojo-the-world.gif'> has been closed
+File <_io.BufferedReader name='static/omg.jpg'> has been closed
+File <_io.BufferedReader name='static/dio-hoho.png'> has been closed
+File <_io.BufferedReader name='static/yare-yare.jpg'> has been closed
+File <_io.BufferedReader name='static/hayato.jfif'> has been closed
+File <_io.BufferedReader name='static/yaro.jfif'> has been closed
+File <_io.BufferedReader name='static/egg.png'> has been closed
+File <_io.BufferedReader name='static/0.gif'> has been closed
+File <_io.BufferedReader name='static/1.png'> has been closed
+File <_io.BufferedReader name='static/2.jpg'> has been closed
+File <_io.BufferedReader name='static/3.jpg'> has been closed
+File <_io.BufferedReader name='static/4.jpg'> has been closed
+File <_io.BufferedReader name='static/5.jpg'> has been closed
+File <_io.BufferedReader name='static/6.jpg'> has been closed
+File <_io.BufferedReader name='static/7.png'> has been closed
+File <_io.BufferedReader name='static/8.jpg'> has been closed
+File <_io.BufferedReader name='static/9.png'> has been closed
+File <_io.BufferedReader name='static/wtf-am-i-reading.jpg'> has been closed
+File your-next-line.png has been preloaded.
+File jojo-the-world.gif has been preloaded.
+File omg.jpg has been preloaded.
+File dio-hoho.png has been preloaded.
+File yare-yare.jpg has been preloaded.
+File hayato.jfif has been preloaded.
+File yaro.jfif has been preloaded.
+File egg.png has been preloaded.
+File 0.gif has been preloaded.
+File 1.png has been preloaded.
+File 2.jpg has been preloaded.
+File 3.jpg has been preloaded.
+File 4.jpg has been preloaded.
+File 5.jpg has been preloaded.
+File 6.jpg has been preloaded.
+File 7.png has been preloaded.
+File 8.jpg has been preloaded.
+File 9.png has been preloaded.
+File wtf-am-i-reading.jpg has been preloaded.
+Message is received: YAROOO
+Matched file: yaro.jfif
+Image static/yaro.jfif has been sent
+Message is received: easter egg
+Matched file: egg.png
+Image static/egg.png has been sent
+Message is received: easter eggs
+Matched file: egg.png
+Image static/egg.png has been sent
+Message is received: omg
+Matched file: omg.jpg
+Image static/omg.jpg has been sent
+Message is received: yaaaree
+Incorrect message: yaaaree
+Image static/wtf-am-i-reading.jpg has been sent
+Message is received: yaaree yare
+Matched file: yare-yare.jpg
+Image static/yare-yare.jpg has been sent
+File <_io.BufferedReader name='static/your-next-line.png'> has been closed
+File <_io.BufferedReader name='static/jojo-the-world.gif'> has been closed
+File <_io.BufferedReader name='static/omg.jpg'> has been closed
+File <_io.BufferedReader name='static/dio-hoho.png'> has been closed
+File <_io.BufferedReader name='static/yare-yare.jpg'> has been closed
+File <_io.BufferedReader name='static/hayato.jfif'> has been closed
+File <_io.BufferedReader name='static/yaro.jfif'> has been closed
+File <_io.BufferedReader name='static/egg.png'> has been closed
+File <_io.BufferedReader name='static/0.gif'> has been closed
+File <_io.BufferedReader name='static/1.png'> has been closed
+File <_io.BufferedReader name='static/2.jpg'> has been closed
+File <_io.BufferedReader name='static/3.jpg'> has been closed
+File <_io.BufferedReader name='static/4.jpg'> has been closed
+File <_io.BufferedReader name='static/5.jpg'> has been closed
+File <_io.BufferedReader name='static/6.jpg'> has been closed
+File <_io.BufferedReader name='static/7.png'> has been closed
+File <_io.BufferedReader name='static/8.jpg'> has been closed
+File <_io.BufferedReader name='static/9.png'> has been closed
+File <_io.BufferedReader name='static/wtf-am-i-reading.jpg'> has been closed
+File your-next-line.png has been preloaded.
+File jojo-the-world.gif has been preloaded.
+File omg.jpg has been preloaded.
+File dio-hoho.png has been preloaded.
+File yare-yare.jpg has been preloaded.
+File hayato.jfif has been preloaded.
+File yaro.jfif has been preloaded.
+File egg.png has been preloaded.
+File 0.gif has been preloaded.
+File 1.png has been preloaded.
+File 2.jpg has been preloaded.
+File 3.jpg has been preloaded.
+File 4.jpg has been preloaded.
+File 5.jpg has been preloaded.
+File 6.jpg has been preloaded.
+File 7.png has been preloaded.
+File 8.jpg has been preloaded.
+File 9.png has been preloaded.
+File wtf-am-i-reading.jpg has been preloaded.
+Message is received: THE WORLDDD
+Matched file: jojo-the-world.gif
+Message is received: THEEEE WOOOORRRRLLLDD
+Matched file: yare-yare.jpg
+Image static/yare-yare.jpg has been sent
+File <_io.BufferedReader name='static/your-next-line.png'> has been closed
+File <_io.BufferedReader name='static/jojo-the-world.gif'> has been closed
+File <_io.BufferedReader name='static/omg.jpg'> has been closed
+File <_io.BufferedReader name='static/dio-hoho.png'> has been closed
+File <_io.BufferedReader name='static/yare-yare.jpg'> has been closed
+File <_io.BufferedReader name='static/hayato.jfif'> has been closed
+File <_io.BufferedReader name='static/yaro.jfif'> has been closed
+File <_io.BufferedReader name='static/egg.png'> has been closed
+File <_io.BufferedReader name='static/0.gif'> has been closed
+File <_io.BufferedReader name='static/1.png'> has been closed
+File <_io.BufferedReader name='static/2.jpg'> has been closed
+File <_io.BufferedReader name='static/3.jpg'> has been closed
+File <_io.BufferedReader name='static/4.jpg'> has been closed
+File <_io.BufferedReader name='static/5.jpg'> has been closed
+File <_io.BufferedReader name='static/6.jpg'> has been closed
+File <_io.BufferedReader name='static/7.png'> has been closed
+File <_io.BufferedReader name='static/8.jpg'> has been closed
+File <_io.BufferedReader name='static/9.png'> has been closed
+File <_io.BufferedReader name='static/wtf-am-i-reading.jpg'> has been closed
+File your-next-line.png has been preloaded.
+File jojo-the-world.gif has been preloaded.
+File omg.jpg has been preloaded.
+File dio-hoho.png has been preloaded.
+File yare-yare.jpg has been preloaded.
+File hayato.jfif has been preloaded.
+File yaro.jfif has been preloaded.
+File egg.png has been preloaded.
+File 0.gif has been preloaded.
+File 1.png has been preloaded.
+File 2.jpg has been preloaded.
+File 3.jpg has been preloaded.
+File 4.jpg has been preloaded.
+File 5.jpg has been preloaded.
+File 6.jpg has been preloaded.
+File 7.png has been preloaded.
+File 8.jpg has been preloaded.
+File 9.png has been preloaded.
+File wtf-am-i-reading.jpg has been preloaded.
+Message is received: omg
+Matched file: omg.jpg
+Image static/omg.jpg has been sent
+Message is received: THE WORLDDD
+Matched file: jojo-the-world.gif
+Message is received: THEEEE WOOOORRRLLLDD
+Incorrect message: THEEEE WOOOORRRLLLDD
+Image static/wtf-am-i-reading.jpg has been sent
+Message is received: hayato
+Matched file: hayato.jfif
+Image static/hayato.jfif has been sent
+File <_io.BufferedReader name='static/your-next-line.png'> has been closed
+File <_io.BufferedReader name='static/jojo-the-world.gif'> has been closed
+File <_io.BufferedReader name='static/omg.jpg'> has been closed
+File <_io.BufferedReader name='static/dio-hoho.png'> has been closed
+File <_io.BufferedReader name='static/yare-yare.jpg'> has been closed
+File <_io.BufferedReader name='static/hayato.jfif'> has been closed
+File <_io.BufferedReader name='static/yaro.jfif'> has been closed
+File <_io.BufferedReader name='static/egg.png'> has been closed
+File <_io.BufferedReader name='static/0.gif'> has been closed
+File <_io.BufferedReader name='static/1.png'> has been closed
+File <_io.BufferedReader name='static/2.jpg'> has been closed
+File <_io.BufferedReader name='static/3.jpg'> has been closed
+File <_io.BufferedReader name='static/4.jpg'> has been closed
+File <_io.BufferedReader name='static/5.jpg'> has been closed
+File <_io.BufferedReader name='static/6.jpg'> has been closed
+File <_io.BufferedReader name='static/7.png'> has been closed
+File <_io.BufferedReader name='static/8.jpg'> has been closed
+File <_io.BufferedReader name='static/9.png'> has been closed
+File <_io.BufferedReader name='static/wtf-am-i-reading.jpg'> has been closed
+File your-next-line.png has been preloaded.
+File jojo-the-world.gif has been preloaded.
+File omg.jpg has been preloaded.
+File dio-hoho.png has been preloaded.
+File yare-yare.jpg has been preloaded.
+File hayato.jfif has been preloaded.
+File yaro.jfif has been preloaded.
+File egg.png has been preloaded.
+File 0.gif has been preloaded.
+File 1.png has been preloaded.
+File 2.jpg has been preloaded.
+File 3.jpg has been preloaded.
+File 4.jpg has been preloaded.
+File 5.jpg has been preloaded.
+File 6.jpg has been preloaded.
+File 7.png has been preloaded.
+File 8.jpg has been preloaded.
+File 9.png has been preloaded.
+File wtf-am-i-reading.jpg has been preloaded.
+Message is received: YYYAAARRROOOO
+Matched file: yaro.jfif
+Image static/yaro.jfif has been sent
+Message is received: OMMMGGG
+Incorrect message: OMMMGGG
+Image static/wtf-am-i-reading.jpg has been sent
+Message is received: HHHAAAAYYYAAAATOOO
+Matched file: hayato.jfif
+Image static/hayato.jfif has been sent
+File <_io.BufferedReader name='static/your-next-line.png'> has been closed
+File <_io.BufferedReader name='static/jojo-the-world.gif'> has been closed
+File <_io.BufferedReader name='static/omg.jpg'> has been closed
+File <_io.BufferedReader name='static/dio-hoho.png'> has been closed
+File <_io.BufferedReader name='static/yare-yare.jpg'> has been closed
+File <_io.BufferedReader name='static/hayato.jfif'> has been closed
+File <_io.BufferedReader name='static/yaro.jfif'> has been closed
+File <_io.BufferedReader name='static/egg.png'> has been closed
+File <_io.BufferedReader name='static/0.gif'> has been closed
+File <_io.BufferedReader name='static/1.png'> has been closed
+File <_io.BufferedReader name='static/2.jpg'> has been closed
+File <_io.BufferedReader name='static/3.jpg'> has been closed
+File <_io.BufferedReader name='static/4.jpg'> has been closed
+File <_io.BufferedReader name='static/5.jpg'> has been closed
+File <_io.BufferedReader name='static/6.jpg'> has been closed
+File <_io.BufferedReader name='static/7.png'> has been closed
+File <_io.BufferedReader name='static/8.jpg'> has been closed
+File <_io.BufferedReader name='static/9.png'> has been closed
+File <_io.BufferedReader name='static/wtf-am-i-reading.jpg'> has been closed
+File your-next-line.png has been preloaded.
+File jojo-the-world.gif has been preloaded.
+File omg.jpg has been preloaded.
+File dio-hoho.png has been preloaded.
+File yare-yare.jpg has been preloaded.
+File hayato.jfif has been preloaded.
+File yaro.jfif has been preloaded.
+File egg.png has been preloaded.
+File 0.gif has been preloaded.
+File 1.png has been preloaded.
+File 2.jpg has been preloaded.
+File 3.jpg has been preloaded.
+File 4.jpg has been preloaded.
+File 5.jpg has been preloaded.
+File 6.jpg has been preloaded.
+File 7.png has been preloaded.
+File 8.jpg has been preloaded.
+File 9.png has been preloaded.
+File wtf-am-i-reading.jpg has been preloaded.
+Message is received: OOOOMMMGGGGG
+Matched file: omg.jpg
+Image static/omg.jpg has been sent
+Message is received: HOHOHOHHO
+Matched file: dio-hoho.png
+Image static/dio-hoho.png has been sent
+Message is received: HHHOOOO HOOOOO
+Matched file: dio-hoho.png
+Image static/dio-hoho.png has been sent
+Message is received: OOMMG
+Matched file: omg.jpg
+Image static/omg.jpg has been sent
+Message is received: YYAAAAROOOO
+Matched file: yaro.jfif
+Image static/yaro.jfif has been sent
+Message is received: HOHOHO
+Matched file: dio-hoho.png
+Image static/dio-hoho.png has been sent
+Message is received: OHMYGOOODD
+Matched file: omg.jpg
+Image static/omg.jpg has been sent
+File <_io.BufferedReader name='static/your-next-line.png'> has been closed
+File <_io.BufferedReader name='static/jojo-the-world.gif'> has been closed
+File <_io.BufferedReader name='static/omg.jpg'> has been closed
+File <_io.BufferedReader name='static/dio-hoho.png'> has been closed
+File <_io.BufferedReader name='static/yare-yare.jpg'> has been closed
+File <_io.BufferedReader name='static/hayato.jfif'> has been closed
+File <_io.BufferedReader name='static/yaro.jfif'> has been closed
+File <_io.BufferedReader name='static/egg.png'> has been closed
+File <_io.BufferedReader name='static/0.gif'> has been closed
+File <_io.BufferedReader name='static/1.png'> has been closed
+File <_io.BufferedReader name='static/2.jpg'> has been closed
+File <_io.BufferedReader name='static/3.jpg'> has been closed
+File <_io.BufferedReader name='static/4.jpg'> has been closed
+File <_io.BufferedReader name='static/5.jpg'> has been closed
+File <_io.BufferedReader name='static/6.jpg'> has been closed
+File <_io.BufferedReader name='static/7.png'> has been closed
+File <_io.BufferedReader name='static/8.jpg'> has been closed
+File <_io.BufferedReader name='static/9.png'> has been closed
+File <_io.BufferedReader name='static/wtf-am-i-reading.jpg'> has been closed
+File your-next-line.png has been preloaded.
+File jojo-the-world.gif has been preloaded.
+File omg.jpg has been preloaded.
+File dio-hoho.png has been preloaded.
+File yare-yare.jpg has been preloaded.
+File hayato.jfif has been preloaded.
+File yaro.jfif has been preloaded.
+File egg.png has been preloaded.
+File 0.gif has been preloaded.
+File 1.png has been preloaded.
+File 2.jpg has been preloaded.
+File 3.jpg has been preloaded.
+File 4.jpg has been preloaded.
+File 5.jpg has been preloaded.
+File 6.jpg has been preloaded.
+File 7.png has been preloaded.
+File 8.jpg has been preloaded.
+File 9.png has been preloaded.
+File wtf-am-i-reading.jpg has been preloaded.
+Message is received: What the fuck
+Matched file: your-next-line.png
+Image static/your-next-line.png has been sent
+Message is received: Am I reading
+Matched file: your-next-line.png
+Image static/your-next-line.png has been sent
+File <_io.BufferedReader name='static/your-next-line.png'> has been closed
+File <_io.BufferedReader name='static/jojo-the-world.gif'> has been closed
+File <_io.BufferedReader name='static/omg.jpg'> has been closed
+File <_io.BufferedReader name='static/dio-hoho.png'> has been closed
+File <_io.BufferedReader name='static/yare-yare.jpg'> has been closed
+File <_io.BufferedReader name='static/hayato.jfif'> has been closed
+File <_io.BufferedReader name='static/yaro.jfif'> has been closed
+File <_io.BufferedReader name='static/egg.png'> has been closed
+File <_io.BufferedReader name='static/0.gif'> has been closed
+File <_io.BufferedReader name='static/1.png'> has been closed
+File <_io.BufferedReader name='static/2.jpg'> has been closed
+File <_io.BufferedReader name='static/3.jpg'> has been closed
+File <_io.BufferedReader name='static/4.jpg'> has been closed
+File <_io.BufferedReader name='static/5.jpg'> has been closed
+File <_io.BufferedReader name='static/6.jpg'> has been closed
+File <_io.BufferedReader name='static/7.png'> has been closed
+File <_io.BufferedReader name='static/8.jpg'> has been closed
+File <_io.BufferedReader name='static/9.png'> has been closed
+File <_io.BufferedReader name='static/wtf-am-i-reading.jpg'> has been closed
+File your-next-line.png has been preloaded.
+File jojo-the-world.gif has been preloaded.
+File omg.jpg has been preloaded.
+File dio-hoho.png has been preloaded.
+File yare-yare.jpg has been preloaded.
+File hayato.jfif has been preloaded.
+File yaro.jfif has been preloaded.
+File egg.png has been preloaded.
+File 0.gif has been preloaded.
+File 1.png has been preloaded.
+File 2.jpg has been preloaded.
+File 3.jpg has been preloaded.
+File 4.jpg has been preloaded.
+File 5.jpg has been preloaded.
+File 6.jpg has been preloaded.
+File 7.png has been preloaded.
+File 8.jpg has been preloaded.
+File 9.png has been preloaded.
+File wtf-am-i-reading.jpg has been preloaded.
+Message is received: OMMMGGGAAATTTT
+Matched file: omg.jpg
+Image static/omg.jpg has been sent
+Message is received: OMG
+Matched file: omg.jpg
+Image static/omg.jpg has been sent
+Message is received: WHAT THE FUCK AM I REEEEAADIIINGG???
+Matched file: your-next-line.png
+Image static/your-next-line.png has been sent
+Message is received: what the fuck
+Matched file: your-next-line.png
+Image static/your-next-line.png has been sent
+Message is received: Am I REEEAADINGGG? WHAT THE FUCK???
+Matched file: your-next-line.png
+Image static/your-next-line.png has been sent
+Message is received: WHHAATT THE FUUUCK??? AM III READINg?
+Matched file: your-next-line.png
+Image static/your-next-line.png has been sent
+Message is received: wtf
+Matched file: your-next-line.png
+Image static/your-next-line.png has been sent
+File static/your-next-line.png has been closed
+File static/jojo-the-world.gif has been closed
+File static/omg.jpg has been closed
+File static/dio-hoho.png has been closed
+File static/yare-yare.jpg has been closed
+File static/hayato.jfif has been closed
+File static/yaro.jfif has been closed
+File static/egg.png has been closed
+File static/0.gif has been closed
+File static/1.png has been closed
+File static/2.jpg has been closed
+File static/3.jpg has been closed
+File static/4.jpg has been closed
+File static/5.jpg has been closed
+File static/6.jpg has been closed
+File static/7.png has been closed
+File static/8.jpg has been closed
+File static/9.png has been closed
+File static/wtf-am-i-reading.jpg has been closed
+File your-next-line.png has been preloaded.
+File jojo-the-world.gif has been preloaded.
+File omg.jpg has been preloaded.
+File dio-hoho.png has been preloaded.
+File yare-yare.jpg has been preloaded.
+File hayato.jfif has been preloaded.
+File yaro.jfif has been preloaded.
+File egg.png has been preloaded.
+File 0.gif has been preloaded.
+File 1.png has been preloaded.
+File 2.jpg has been preloaded.
+File 3.jpg has been preloaded.
+File 4.jpg has been preloaded.
+File 5.jpg has been preloaded.
+File 6.jpg has been preloaded.
+File 7.png has been preloaded.
+File 8.jpg has been preloaded.
+File 9.png has been preloaded.
+File wtf-am-i-reading.jpg has been preloaded.
+Message is received: AM I REEEAAADDDIIN??
+Matched file: your-next-line.png
+Image static/your-next-line.png has been sent
+Message is received: ZA WAAARUUUDDDOOO
+Matched file: jojo-the-world.gif
+Message is received: OMYGOOOD
+Incorrect message: OMYGOOOD
+Image static/wtf-am-i-reading.jpg has been sent
+Message is received: OOOOHHHHMYYYYGOOOODD
+Incorrect message: OOOOHHHHMYYYYGOOOODD
+Image static/wtf-am-i-reading.jpg has been sent
+File static/your-next-line.png has been closed
+File static/jojo-the-world.gif has been closed
+File static/omg.jpg has been closed
+File static/dio-hoho.png has been closed
+File static/yare-yare.jpg has been closed
+File static/hayato.jfif has been closed
+File static/yaro.jfif has been closed
+File static/egg.png has been closed
+File static/0.gif has been closed
+File static/1.png has been closed
+File static/2.jpg has been closed
+File static/3.jpg has been closed
+File static/4.jpg has been closed
+File static/5.jpg has been closed
+File static/6.jpg has been closed
+File static/7.png has been closed
+File static/8.jpg has been closed
+File static/9.png has been closed
+File static/wtf-am-i-reading.jpg has been closed
+File your-next-line.png has been preloaded.
+File jojo-the-world.gif has been preloaded.
+File omg.jpg has been preloaded.
+File dio-hoho.png has been preloaded.
+File yare-yare.jpg has been preloaded.
+File hayato.jfif has been preloaded.
+File yaro.jfif has been preloaded.
+File egg.png has been preloaded.
+File 0.gif has been preloaded.
+File 1.png has been preloaded.
+File 2.jpg has been preloaded.
+File 3.jpg has been preloaded.
+File 4.jpg has been preloaded.
+File 5.jpg has been preloaded.
+File 6.jpg has been preloaded.
+File 7.png has been preloaded.
+File 8.jpg has been preloaded.
+File 9.png has been preloaded.
+File wtf-am-i-reading.jpg has been preloaded.
+Message is received: OOOOHHHHMYYYYGOOOODD
+Matched file: omg.jpg
+Image static/omg.jpg has been sent
+Message is received: oooooOOOOmyyyGOOODD
+Matched file: omg.jpg
+Image static/omg.jpg has been sent
+Message is received: HOHOOHOOH
+Matched file: dio-hoho.png
+Image static/dio-hoho.png has been sent
+Message is received: HO HO
+Matched file: dio-hoho.png
+Image static/dio-hoho.png has been sent
+Message is received: yareyare
+Matched file: yare-yare.jpg
+Image static/yare-yare.jpg has been sent
+Message is received: YAAre YAreee daze
+Matched file: yare-yare.jpg
+Image static/yare-yare.jpg has been sent
+Message is received: hayato
+Matched file: hayato.jfif
+Image static/hayato.jfif has been sent
+Message is received: hayaaaaato
+Matched file: hayato.jfif
+Image static/hayato.jfif has been sent
+Message is received: yarooo
+Matched file: yaro.jfif
+Image static/yaro.jfif has been sent
+Message is received: egg
+Incorrect message: egg
+Image static/wtf-am-i-reading.jpg has been sent
+File static/your-next-line.png has been closed
+File static/jojo-the-world.gif has been closed
+File static/omg.jpg has been closed
+File static/dio-hoho.png has been closed
+File static/yare-yare.jpg has been closed
+File static/hayato.jfif has been closed
+File static/yaro.jfif has been closed
+File static/egg.png has been closed
+File static/0.gif has been closed
+File static/1.png has been closed
+File static/2.jpg has been closed
+File static/3.jpg has been closed
+File static/4.jpg has been closed
+File static/5.jpg has been closed
+File static/6.jpg has been closed
+File static/7.png has been closed
+File static/8.jpg has been closed
+File static/9.png has been closed
+File static/wtf-am-i-reading.jpg has been closed
+File your-next-line.png has been preloaded.
+File jojo-the-world.gif has been preloaded.
+File omg.jpg has been preloaded.
+File dio-hoho.png has been preloaded.
+File yare-yare.jpg has been preloaded.
+File hayato.jfif has been preloaded.
+File yaro.jfif has been preloaded.
+File egg.png has been preloaded.
+File 0.gif has been preloaded.
+File 1.png has been preloaded.
+File 2.jpg has been preloaded.
+File 3.jpg has been preloaded.
+File 4.jpg has been preloaded.
+File 5.jpg has been preloaded.
+File 6.jpg has been preloaded.
+File 7.png has been preloaded.
+File 8.jpg has been preloaded.
+File 9.png has been preloaded.
+File wtf-am-i-reading.jpg has been preloaded.
+Message is received: egg
+Matched file: egg.png
+Image static/egg.png has been sent
+Message is received: KAKOOOIIINN, DID YOU LEG THIS EGG???
+Matched file: egg.png
+Image static/egg.png has been sent
+Message is received: KAKYOIN, DID YOU LAY THIS EEEGGG???
+Matched file: egg.png
+Image static/egg.png has been sent
+Message is received: 0
+Matched file: 0.gif
+Message is received: 1
+Matched file: 1.png
+Image static/1.png has been sent
+Message is received: 2
+Matched file: 2.jpg
+Image static/2.jpg has been sent
+Message is received: 3
+Matched file: 3.jpg
+Image static/3.jpg has been sent
+Message is received: 4
+Matched file: 4.jpg
+Image static/4.jpg has been sent
+Message is received: 5
+Matched file: 5.jpg
+Image static/5.jpg has been sent
+Message is received: 6
+Matched file: 6.jpg
+Image static/6.jpg has been sent
+Message is received: 7
+Matched file: 7.png
+Image static/7.png has been sent
+Message is received: 8
+Matched file: 8.jpg
+Image static/8.jpg has been sent
+Message is received: 9
+Matched file: 9.png
+Image static/9.png has been sent
+Message is received: just give me Josuke
+Matched file: egg.png
+Image static/egg.png has been sent
+File static/your-next-line.png has been closed
+File static/jojo-the-world.gif has been closed
+File static/omg.jpg has been closed
+File static/dio-hoho.png has been closed
+File static/yare-yare.jpg has been closed
+File static/hayato.jfif has been closed
+File static/yaro.jfif has been closed
+File static/egg.png has been closed
+File static/0.gif has been closed
+File static/1.png has been closed
+File static/2.jpg has been closed
+File static/3.jpg has been closed
+File static/4.jpg has been closed
+File static/5.jpg has been closed
+File static/6.jpg has been closed
+File static/7.png has been closed
+File static/8.jpg has been closed
+File static/9.png has been closed
+File static/wtf-am-i-reading.jpg has been closed
+File your-next-line.png has been preloaded.
+File jojo-the-world.gif has been preloaded.
+File omg.jpg has been preloaded.
+File dio-hoho.png has been preloaded.
+File yare-yare.jpg has been preloaded.
+File hayato.jfif has been preloaded.
+File yaro.jfif has been preloaded.
+File egg.png has been preloaded.
+File 0.gif has been preloaded.
+File 1.png has been preloaded.
+File 2.jpg has been preloaded.
+File 3.jpg has been preloaded.
+File 4.jpg has been preloaded.
+File 5.jpg has been preloaded.
+File 6.jpg has been preloaded.
+File 7.png has been preloaded.
+File 8.jpg has been preloaded.
+File 9.png has been preloaded.
+File wtf-am-i-reading.jpg has been preloaded.
+Message is received: just give me Josuke
+Matched file: wtf-am-i-reading.jpg
+Image static/wtf-am-i-reading.jpg has been sent

@@ -1,118 +1,139 @@
 from telebot import TeleBot, types
 from PIL import Image
 import re
+from io import BytesIO
+import logging
 
 
-token = open('token.txt').readline()
+data = {
+    'your-next-line.png': re.compile(r'.*(a+m+[\W]*i+[\W]*r+e+a+d+i+n+(g+)?|w+h+a+t+[\W]*t+h+e+[\W]*f+u+c+k+|w+t+f+)[\W]*'
+                                     r'(a+m+[\W]*i+[\W]*r+e+a+d+i+n+(g+)?)?[\W,?]*|'
+                                     r'(a+m+[\W]*i+[\W]*r+e+a+d+i+n+(g+)?)?\s*(w+h+a+t+[\W]*t+h+e[\W]*f+u+c+k+|w+t+f)'
+                                     r'[\W,?]*|(w+h+a+t+[\W]*a+r+e+[\W]*y+o+u+[\W]*t+a+l+k+i+n+g+[\W]*a+b+o+u+t).*',
+                                     re.IGNORECASE),
+
+    'jojo-the-world.gif': re.compile(r'.*(t+h+e+[\W]*w+o+r+l+d+|z+a+[\W]*w+a+r+u+d+o).*', re.IGNORECASE),
+
+    'omg.jpg': re.compile(r'.*(o+m+g|o+(h+)?[\W]*m+y+[\W]*g+o+d+|o+(h+)?[\W]*s+h+i+t[\W]*).*', re.IGNORECASE),
+
+    'dio-hoho.png': re.compile(r'.*(h+o+[\W]*h+o+|o+h+[\W]*h+o+).*', re.IGNORECASE),
+
+    'yare-yare.jpg': re.compile(r'.*(y+a+r+e+[\W]*ya+re+[\W]*(daze|dawa)?|good grief).*', re.IGNORECASE),
+
+    'hayato.jfif': re.compile(r'.*(h+a+y+a+t+o).*', re.IGNORECASE),
+
+    'yaro.jfif': re.compile(r'.*(y+a+r+o).*', re.IGNORECASE),
+
+    'egg.png': re.compile(r'.*(e+a+s+t+e+r+[\W]*|(egg|eggs)).*', re.IGNORECASE),
+
+    '0.gif': re.compile(r'.?0.?'), '1.png': re.compile(r'.?1.?'), '2.jpg': re.compile(r'.?2.?'),
+    '3.jpg': re.compile(r'.?3.?'), '4.jpg': re.compile(r'.?4.?'), '5.jpg': re.compile(r'.?5.?'),
+    '6.jpg': re.compile(r'.?6.?'), '7.png': re.compile(r'.?7.?'), '8.jpg': re.compile(r'.?8.?'),
+    '9.png': re.compile(r'.?9.?'),
+
+    'wtf-am-i-reading.jpg': re.compile(r'.*(j+u+s+t+[\W]*g+i+v+e+[\W]*m+e+[\W]*J+o+s+u+k+e).*', re.IGNORECASE)
+}
+
+file_objects = dict()
+
+
+logger = logging.getLogger(__name__)
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='%(levelname)s | %(name)s | %(asctime)s | %(message)s',
+    datefmt='%H:%M:%S'
+)
+file_handler = logging.FileHandler(f'{logger.name}.log')
+logger.addHandler(file_handler)
+
+
 bot_name = 'my_digits_bot'
+token = open('token.txt').readline()
+bot = TeleBot(token, threaded=True)
 markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-bot = TeleBot(token)
-
-
-digits, str_digits = [i for i in range(10)], [str(i) for i in range(10)]
-
-
-def error_handling(message):
-    bot.reply_to(message, 'Choose the digit from 0 to 9', reply_markup=markup)
-
-    return send_photo_by_name_extention(message, 'wtf-am-i-reading', 'jpg')
-
-
-def wtf_reading(text, message):
-    pattern = re.compile(
-        r'(am\s*i\s*reading|what\s*the\s*fuck|wtf)\s*(am\s*i\s*reading)?[\s,?]*|'
-        r'(am\s*i\s*reading)?\s*(what\s*the\s*fuck|wtf)[\s,?]*|'
-        r'(what\s*are\s*you\s*talking\s*about)',
-        re.IGNORECASE
-    )
-
-    if pattern.match(text):
-        # change func name
-        return send_photo_by_name_extention(message, 'your_next_line', 'png')
-
-    return False
-
-
-# make gif load faster
-def the_world(text, message):
-    # make it re
-    message_possibilities = ['the world', 'za warudo', 'the world!', 'za warudo!']
-
-    if text.lower() in message_possibilities:
-        send_photo_by_name_extention(message, 'jojo-the-world', 'gif')
-        return True
-
-    return False
-
-
-def omg(text, message):
-    pattern = re.compile(
-        r'\s*(omg|oh[\W]*my[\W]*god|oh[\W]*shit[\W]*)\s*!?',
-        re.IGNORECASE
-    )
-
-    if pattern.match(text):
-        return send_photo_by_name_extention(message, 'omg', 'jpg')
-
-    return False
-
-
-
-def yare_yare(text, message):
-    pattern = re.compile(r'(yare+\s*?yare+\s?|daze)', re.IGNORECASE)
-
-    if pattern.match(text):
-        return send_photo_by_name_extention(message, 'yare-yare', 'jpg')
-
-    return False
-
-
-def send_photo_by_name(message, name):
-    extensions = ['jpg', 'png', 'gif']
-
-    for ext in extensions:
-        try:
-            return send_photo_by_name_extention(message, name, ext)
-        except FileNotFoundError:
-            continue
-
-    return error_handling(message)
-
-
-def send_photo_by_name_extention(message, name, ext):
-    img = Image.open(f'static/{name}.{ext}')
-
-    if ext == 'gif':
-        with open(f'static/{name}.{ext}', 'rb') as gif_file:
-            return bot.send_animation(message.chat.id, gif_file)
-    else:
-        return bot.send_photo(message.chat.id, img)
 
 
 @bot.message_handler()
 def message_reply(message):
-    text = message.text
-    if text in str_digits:
-        send_photo_by_name(message, text)
+    logger.info(f'Message is received: {message.text}')
 
-    elif len(text) == 2 and text[1] in str_digits:
-        send_photo_by_name(message, text[1])
+    data = match_file(message, message.text)
+    if data:
+        message, filename = data
+        file_object = get_file_object(message, filename)
 
-    elif wtf_reading(message.text, message):
-        return
+        message, file, ext = file_object
+        return send_by_name_ext(message, file, ext)
 
-    elif the_world(message.text, message):
-        return
+    return error_handling(message)
 
-    elif omg(message.text, message):
-        return
 
-    elif yare_yare(message.text, message):
-        return
+def preload_files() -> None:
+    for filename in data.keys():
+        try:
+            file_objects[filename] = open(f'static/{filename}', 'rb')
+            logger.info(f'File {filename} has been preloaded.')
+        except FileNotFoundError:
+            logger.error(f"File {filename} not found. Skipping...")
 
+
+def close_files() -> None:
+    for file_object in file_objects.values():
+        if file_object:
+            file_object.close()
+            logger.info(f"File {file_object.name} has been closed")
+
+
+def match_file(message, input_text):
+    for filename, pattern in data.items():
+        if pattern.match(input_text):
+            logger.info(f"Matched file: {filename}")
+
+            return message, filename
+    return False
+
+
+def get_file_object(message, filename):
+    file_object = file_objects.get(filename)
+    ext = filename.split('.')[-1].lower()
+
+    if file_object:
+        file_object.seek(0)
+
+        return message, file_object, ext
     else:
-        error_handling(message)
+        logger.error(f"File object for {filename} not available.")
+
+
+def send_by_name_ext(message, file_object, ext):
+    if ext == 'gif':
+        return bot.send_animation(message.chat.id, file_object)
+    else:
+        image = Image.open(file_object)
+
+        ext ='jpeg' if ext in ['jpg', 'jfif'] else ext
+        image = image.convert('RGB') if image.mode == 'RGBA' else image
+
+        image_data = BytesIO()
+        image.save(image_data, format=ext.upper())
+        image_data.seek(0)
+
+        bot.send_photo(message.chat.id, image)
+
+        logger.info(f'Image {file_object.name} has been sent')
+        return True
+
+
+def error_handling(message):
+    logger.info(f'Incorrect message: {message.text}')
+
+    bot.reply_to(message, 'Choose the digit from 0 to 9', reply_markup=markup)
+    message, img, ext = get_file_object(message, 'wtf-am-i-reading.jpg')
+
+    return send_by_name_ext(message, img, ext)
 
 
 if __name__ == '__main__':
+    preload_files()
     bot.infinity_polling()
+    close_files()
