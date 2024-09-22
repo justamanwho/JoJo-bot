@@ -12,7 +12,7 @@ data = {
                                      r'[\W,?]*|(w+h+a+t+[\W]*a+r+e+[\W]*y+o+u+[\W]*t+a+l+k+i+n+g+[\W]*a+b+o+u+t).*',
                                      re.IGNORECASE),
 
-    'jojo-the-world.gif': re.compile(r'.*(t+h+e+[\W]*w+o+r+l+d+|z+a+[\W]*w+a+r+u+d+o).*', re.IGNORECASE),
+    'the-world.gif': re.compile(r'.*(t+h+e+[\W]*w+o+r+l+d+|z+a+[\W]*w+a+r+u+d+o).*', re.IGNORECASE),
 
     'omg.jpg': re.compile(r'.*(o+m+g|o+(h+)?[\W]*m+y+[\W]*g+o+d+|o+(h+)?[\W]*s+h+i+t[\W]*).*', re.IGNORECASE),
 
@@ -25,6 +25,26 @@ data = {
     'yaro.jfif': re.compile(r'.*(y+a+r+o).*', re.IGNORECASE),
 
     'egg.png': re.compile(r'.*(e+a+s+t+e+r+[\W]*|(egg|eggs)).*', re.IGNORECASE),
+
+    'jojo.jpg': re.compile(r'.*(J+o+J+o+).*', re.IGNORECASE),
+
+    'Jonathan.png': re.compile(r'.*(J+o+e+s+t+a+r|J+o+n+a+t+h+a+n|J+o+J+o+[\W]1).*', re.IGNORECASE),
+
+    'Joseph.png': re.compile(r'.*(J+o+s+e+p+h|J+o+J+o+[\W]2).*', re.IGNORECASE),
+
+    'Jotaro.png': re.compile(r'.*(K+u+j+o|J+o+t+a+r+o|J+o+J+o+[\W]3).*', re.IGNORECASE),
+
+    'Josuke-4.png': re.compile(r'.*(H+i+g+a+s+h+i+k+a+t+a|J+o+s+u+k+e|J+o+J+o+[\W]4).*', re.IGNORECASE),
+
+    'Giorno.jpg': re.compile(r'.*(G+i+o+r+n+o|G+i+o+v+a+n+n+a|J+o+J+o+[\W]5).*', re.IGNORECASE),
+
+    'Jolyne.png': re.compile(r'.*(J+o+l+y+n|C+u+j+o+h|J+o+J+o+[\W]6).*', re.IGNORECASE),
+
+    'Johnny.png': re.compile(r'.*(J+o+h*n+y|J+o+J+o+[\W]7).*', re.IGNORECASE),
+
+    'Josuke-8.jpg': re.compile(r'.*(J+o+J+o+[\W]8).*', re.IGNORECASE),
+
+    'Jodio.png': re.compile(r'.*(J+o+d+i+o|J+o+J+o+[\W]9).*', re.IGNORECASE),
 
     '0.gif': re.compile(r'.?0.?'), '1.png': re.compile(r'.?1.?'), '2.jpg': re.compile(r'.?2.?'),
     '3.jpg': re.compile(r'.?3.?'), '4.jpg': re.compile(r'.?4.?'), '5.jpg': re.compile(r'.?5.?'),
