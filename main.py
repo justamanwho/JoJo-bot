@@ -1,15 +1,15 @@
 from telebot import TeleBot, types
-from PIL import Image
-import re
 from io import BytesIO
+from PIL import Image
 import logging
+import re
 
 
 data = {
-    'your-next-line.png': re.compile(r'.*(a+m+[\W]*i+[\W]*r+e+a+d+i+n+(g+)?|w+h+a+t+[\W]*t+h+e+[\W]*f+u+c+k+|w+t+f+)[\W]*'
-                                     r'(a+m+[\W]*i+[\W]*r+e+a+d+i+n+(g+)?)?[\W,?]*|'
-                                     r'(a+m+[\W]*i+[\W]*r+e+a+d+i+n+(g+)?)?\s*(w+h+a+t+[\W]*t+h+e[\W]*f+u+c+k+|w+t+f)'
-                                     r'[\W,?]*|(w+h+a+t+[\W]*a+r+e+[\W]*y+o+u+[\W]*t+a+l+k+i+n+g+[\W]*a+b+o+u+t).*',
+    # Key Phrases
+
+    'your-next-line.png': re.compile(r'.*(a+m+[\W]*i+[\W]*r+e+a+d+i+n|w+h+a+t+[\W]*t+h+e+[\W]*f+u+c+k+|w+t+f'
+                                     r'|w+h+a+t+[\W]*a+r+e+[\W]*y+o+u+[\W]*t+a+l+k+i+n+g+[\W]*a+b+o+u+t).*',
                                      re.IGNORECASE),
 
     'the-world.gif': re.compile(r'.*(t+h+e+[\W]*w+o+r+l+d+|z+a+[\W]*w+a+r+u+d+o).*', re.IGNORECASE),
@@ -26,30 +26,54 @@ data = {
 
     'egg.png': re.compile(r'.*(e+a+s+t+e+r+[\W]*|(egg|eggs)).*', re.IGNORECASE),
 
+    'Rohan.jpg': re.compile(r'.*(R+o+h+a+n|K+i+s+h+i+b+e|H+o+w+[\W]d+o+e+s+[\W]i+t+[\W]t+a+s+t+e).*', re.IGNORECASE),
+
+    'wryyy.png': re.compile(r'.*(W+R+YY*).*', re.IGNORECASE),
+
+    'my-reaction-when-I-saw-Josuke8.jpg': re.compile(r'.*((O+I+|H*E+Y+|Y+O+)[\W]J+O+S+U+K+E).*', re.IGNORECASE),
+
+    'i-see.png': re.compile(r'.*(I+[\W]*see+).*', re.IGNORECASE),
+
+    'rero-rero.jpg': re.compile(r'.*(r+e+r+o|r+e+r+e).*', re.IGNORECASE),
+
+    'your-underwear-is-showing.gif': re.compile(r'.*(Y+o+u+r+[\W]*U+n+d+e+r+w+e+a+r+[\W]*I+s+[\W]*S+h+o+w+i+n+g'
+                                                r'|I+[\W]*C+a+n+[\W]*S+e+e+[\W]*Y+o+u+r+[\W]*U+n+d+e+r+w+e+a+r).*',
+                                                re.IGNORECASE),
+
+    'stares.jpg': re.compile(r'.*(s+t+a+r+e+s*|e+y+e+s).*', re.IGNORECASE),
+
+
+    # Every JoJo
+
+    'Jonathan.png': re.compile(r'.*(J+o+e+s+t+a+r|J+o+n+a+t+h+a+n|J+o+J+o+[\W]*1).*', re.IGNORECASE),
+
+    'Joseph.png': re.compile(r'.*(J+o+s+e+p+h|J+o+J+o+[\W]*2).*', re.IGNORECASE),
+
+    'Jotaro.png': re.compile(r'.*(K+u+j+o|J+o+t+a+r+o|J+o+J+o+[\W]*3).*', re.IGNORECASE),
+
+    'Josuke-4.png': re.compile(r'.*(H+i+g+a+s+h+i+k+a+t+a|J+o+s+u+k+e(?![\W]*8+)|J+o+J+o+[\W]*4).*', re.IGNORECASE),
+
+    'Giorno.jpg': re.compile(r'.*(G+i+o+r+n+o|G+i+o+v+a+n+n+a|J+o+J+o+[\W]*5).*', re.IGNORECASE),
+
+    'Jolyne.png': re.compile(r'.*(J+o+l+y+n|C+u+j+o+h|J+o+J+o+[\W]*6).*', re.IGNORECASE),
+
+    'Johnny.png': re.compile(r'.*(J+o+h*n+y|J+o+J+o+[\W]*7).*', re.IGNORECASE),
+
+    'Josuke-8.jpg': re.compile(r'.*(J+o+s+u+k+e+8*|J+o+J+o+[\W]*8).*', re.IGNORECASE),
+
+    'Jodio.png': re.compile(r'.*(J+o+d+i+o|J+o+J+o+[\W]*9).*', re.IGNORECASE),
+
     'jojo.jpg': re.compile(r'.*(J+o+J+o+).*', re.IGNORECASE),
 
-    'Jonathan.png': re.compile(r'.*(J+o+e+s+t+a+r|J+o+n+a+t+h+a+n|J+o+J+o+[\W]1).*', re.IGNORECASE),
 
-    'Joseph.png': re.compile(r'.*(J+o+s+e+p+h|J+o+J+o+[\W]2).*', re.IGNORECASE),
-
-    'Jotaro.png': re.compile(r'.*(K+u+j+o|J+o+t+a+r+o|J+o+J+o+[\W]3).*', re.IGNORECASE),
-
-    'Josuke-4.png': re.compile(r'.*(H+i+g+a+s+h+i+k+a+t+a|J+o+s+u+k+e|J+o+J+o+[\W]4).*', re.IGNORECASE),
-
-    'Giorno.jpg': re.compile(r'.*(G+i+o+r+n+o|G+i+o+v+a+n+n+a|J+o+J+o+[\W]5).*', re.IGNORECASE),
-
-    'Jolyne.png': re.compile(r'.*(J+o+l+y+n|C+u+j+o+h|J+o+J+o+[\W]6).*', re.IGNORECASE),
-
-    'Johnny.png': re.compile(r'.*(J+o+h*n+y|J+o+J+o+[\W]7).*', re.IGNORECASE),
-
-    'Josuke-8.jpg': re.compile(r'.*(J+o+J+o+[\W]8).*', re.IGNORECASE),
-
-    'Jodio.png': re.compile(r'.*(J+o+d+i+o|J+o+J+o+[\W]9).*', re.IGNORECASE),
+    # Responses on Digits
 
     '0.gif': re.compile(r'.?0.?'), '1.png': re.compile(r'.?1.?'), '2.jpg': re.compile(r'.?2.?'),
     '3.jpg': re.compile(r'.?3.?'), '4.jpg': re.compile(r'.?4.?'), '5.jpg': re.compile(r'.?5.?'),
     '6.jpg': re.compile(r'.?6.?'), '7.png': re.compile(r'.?7.?'), '8.jpg': re.compile(r'.?8.?'),
     '9.png': re.compile(r'.?9.?'),
+
+    # Error Handling
 
     'wtf-am-i-reading.jpg': re.compile(r'.*(j+u+s+t+[\W]*g+i+v+e+[\W]*m+e+[\W]*J+o+s+u+k+e).*', re.IGNORECASE)
 }
@@ -127,7 +151,9 @@ def get_file_object(message, filename):
 
 def send_by_name_ext(message, file_object, ext):
     if ext == 'gif':
-        return bot.send_animation(message.chat.id, file_object)
+        bot.send_animation(message.chat.id, file_object)
+    elif ext == 'png':
+        bot.send_photo(message.chat.id, file_object)
     else:
         image = Image.open(file_object)
 
@@ -140,8 +166,8 @@ def send_by_name_ext(message, file_object, ext):
 
         bot.send_photo(message.chat.id, image)
 
-        logger.info(f'Image {file_object.name} has been sent')
-        return True
+    logger.info(f'File {file_object.name.split("/")[-1]} has been sent')
+    return True
 
 
 def error_handling(message):

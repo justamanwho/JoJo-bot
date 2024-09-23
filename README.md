@@ -7,7 +7,7 @@ The bot, which sends as response to the digits my associations of those digits.
 4. MISTAAAAAAA
 5. Reset(saad)
 6. Stone Ocean
-7. Lucky
+7. Lucky number
 8. Dio plays Chess (8x8)
 9. Jojolands
 
@@ -19,10 +19,16 @@ There are also key phrases on which the bot replies:
 - Yaroo
 - THE WORLD!!!
 - Hayato
-- JoJo
+- I see.
+- OI JOSUKE
+- RERO RERO RERO
+- WRYYYY
+- Your underwear is showing
+- How does It TASTE?
+- Stares
 
 
-As well as every JoJo:
+As well as every single JoJo:
 - Jonathan Joestar (JoJo1)
 - Joseph Joestar (JoJo2)
 - Jotaro Kujo (JoJo3)
@@ -32,6 +38,7 @@ As well as every JoJo:
 - Johnny Joestar (JoJo7)
 - Josuke Higashikata (JoJo8)
 - Jodio Joestar (JoJo9)
+- JoJo (all of them)
 
 There are also Easter eggs.
 
