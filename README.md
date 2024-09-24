@@ -1,4 +1,4 @@
-The bot, which sends as response to the digits my associations of those digits.
+The bot, which... Fuck around and find out what it does yourself...
 
 0. Zero seconds have left
 1. One Punch Man Ora Ora Ora
@@ -26,6 +26,8 @@ There are also key phrases on which the bot replies:
 - Your underwear is showing
 - How does It TASTE?
 - Stares
+- Yes! I am!
+- NIGERUNDAYOOOO
 
 
 As well as every single JoJo:
@@ -39,6 +41,11 @@ As well as every single JoJo:
 - Josuke Higashikata (JoJo8)
 - Jodio Joestar (JoJo9)
 - JoJo (all of them)
+
+
+As well as every single Jojo Villain:
+...
+
 
 There are also Easter eggs.
 

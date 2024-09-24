@@ -6,6 +6,8 @@ import re
 
 
 data = {
+    'README.md': re.compile('.*(s+t+a+r+t|h+e+l+p).*', re.IGNORECASE),
+
     # Key Phrases
 
     'your-next-line.png': re.compile(r'.*(a+m+[\W]*i+[\W]*r+e+a+d+i+n|w+h+a+t+[\W]*t+h+e+[\W]*f+u+c+k+|w+t+f'
@@ -26,11 +28,11 @@ data = {
 
     'egg.png': re.compile(r'.*(e+a+s+t+e+r+[\W]*|(egg|eggs)).*', re.IGNORECASE),
 
-    'Rohan.jpg': re.compile(r'.*(R+o+h+a+n|K+i+s+h+i+b+e|H+o+w+[\W]d+o+e+s+[\W]i+t+[\W]t+a+s+t+e).*', re.IGNORECASE),
+    'Rohan.jpg': re.compile(r'.*(R+o+h+a+n|K+i+s+h+i+b+e|H+o+w+[\W]*d+o+e+s+[\W]*i+t+[\W]*t+a+s+t+e).*', re.IGNORECASE),
 
     'wryyy.png': re.compile(r'.*(W+R+YY*).*', re.IGNORECASE),
 
-    'my-reaction-when-I-saw-Josuke8.jpg': re.compile(r'.*((O+I+|H*E+Y+|Y+O+)[\W]J+O+S+U+K+E).*', re.IGNORECASE),
+    'my-reaction-when-I-saw-Josuke8.jpg': re.compile(r'.*((O+I+|H*E+Y+|Y+O+)[\W]*J+O+S+U+K+E).*', re.IGNORECASE),
 
     'i-see.png': re.compile(r'.*(I+[\W]*see+).*', re.IGNORECASE),
 
@@ -65,6 +67,12 @@ data = {
 
     'jojo.jpg': re.compile(r'.*(J+o+J+o+).*', re.IGNORECASE),
 
+    'yes-i-am.png': re.compile(r'.*(Y+e+s+[\W]*I+[\W]*A+m).*', re.IGNORECASE),
+
+    'you-are-annoying.png': re.compile(r'.*(S+h+u+t+[\W]*(T+h+e+[\W]*F+u+c+k+[\W]*)?U+p+|Y+o+u+[\W]*a+r+e+[\W]*'
+                                       r'(d+a+m+n+[\W]*)a+n+n*o+y+i+n+g*|Y+a+k+a+m+a+s+h+i).*', re.IGNORECASE),
+
+    'nigerundayo.jpg': re.compile(r'.*(N+i+g+e+r+u|R+u+n).*', re.IGNORECASE),
 
     # Responses on Digits
 
@@ -104,21 +112,31 @@ def message_reply(message):
     data = match_file(message, message.text)
     if data:
         message, filename = data
-        file_object = get_file_object(message, filename)
 
-        message, file, ext = file_object
-        return send_by_name_ext(message, file, ext)
+        if filename != 'README.md':
+            file_object = get_file_object(message, filename)
+            message, file, ext = file_object
+
+            return send_file_by_name_ext(message, file, ext)
+        else:
+            return send_start_message(message)
 
     return error_handling(message)
 
 
 def preload_files() -> None:
+    # Getting ready all files
     for filename in data.keys():
         try:
             file_objects[filename] = open(f'static/{filename}', 'rb')
             logger.info(f'File {filename} has been preloaded.')
         except FileNotFoundError:
             logger.error(f"File {filename} not found. Skipping...")
+
+    # Getting ready start message
+    with open('README.md', 'r') as readme:
+        global start_message
+        start_message = readme.read()
 
 
 def close_files() -> None:
@@ -149,7 +167,7 @@ def get_file_object(message, filename):
         logger.error(f"File object for {filename} not available.")
 
 
-def send_by_name_ext(message, file_object, ext):
+def send_file_by_name_ext(message, file_object, ext):
     if ext == 'gif':
         bot.send_animation(message.chat.id, file_object)
     elif ext == 'png':
@@ -167,6 +185,14 @@ def send_by_name_ext(message, file_object, ext):
         bot.send_photo(message.chat.id, image)
 
     logger.info(f'File {file_object.name.split("/")[-1]} has been sent')
+
+    return True
+
+
+def send_start_message(message):
+    bot.send_message(message.chat.id, start_message)
+    logger.info(f'Start Message has been sent')
+
     return True
 
 
@@ -176,7 +202,7 @@ def error_handling(message):
     bot.reply_to(message, 'Choose the digit from 0 to 9', reply_markup=markup)
     message, img, ext = get_file_object(message, 'wtf-am-i-reading.jpg')
 
-    return send_by_name_ext(message, img, ext)
+    return send_file_by_name_ext(message, img, ext)
 
 
 if __name__ == '__main__':
