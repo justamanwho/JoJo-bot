@@ -44,6 +44,18 @@ data = {
 
     'stares.jpg': re.compile(r'.*(s+t+a+r+e+s*|e+y+e+s).*', re.IGNORECASE),
 
+    'yes-i-am.png': re.compile(r'.*(Y+e+s+[\W]*I+[\W]*A+m).*', re.IGNORECASE),
+
+    'you-are-annoying.png': re.compile(r'.*(S+h+u+t+[\W]*(T+h+e+[\W]*F+u+c+k+[\W]*)?U+p+|Y+o+u+[\W]*a+r+e+[\W]*'
+                                       r'(d+a+m+n+[\W]*)a+n+n*o+y+i+n+g*|Y+a+k+a+m+a+s+h+i).*', re.IGNORECASE),
+
+    'nigerundayo.jpg': re.compile(r'.*(N+i+g+e+r+u|R+u+n).*', re.IGNORECASE),
+
+    'ambulance.png': re.compile(r'.*(A+m+b+u+l+a+n+c+e).*', re.IGNORECASE),
+
+    'road-roller.jpg': re.compile('.*(R+o+A+d+[\W]*R+o+L+L*e+R).*', re.IGNORECASE),
+
+    'kono-dio-da.avif': re.compile('.*(K+o+n+o+[\W]*D+i+o+[\W]*D+a).*', re.IGNORECASE),
 
     # Every JoJo
 
@@ -67,12 +79,9 @@ data = {
 
     'jojo.jpg': re.compile(r'.*(J+o+J+o+).*', re.IGNORECASE),
 
-    'yes-i-am.png': re.compile(r'.*(Y+e+s+[\W]*I+[\W]*A+m).*', re.IGNORECASE),
 
-    'you-are-annoying.png': re.compile(r'.*(S+h+u+t+[\W]*(T+h+e+[\W]*F+u+c+k+[\W]*)?U+p+|Y+o+u+[\W]*a+r+e+[\W]*'
-                                       r'(d+a+m+n+[\W]*)a+n+n*o+y+i+n+g*|Y+a+k+a+m+a+s+h+i).*', re.IGNORECASE),
-
-    'nigerundayo.jpg': re.compile(r'.*(N+i+g+e+r+u|R+u+n).*', re.IGNORECASE),
+    # Every Villain
+    'Dio-1.png': re.compile(r'.*(D+I+O|B+r+a+n+d+o).*', re.IGNORECASE),
 
     # Responses on Digits
 

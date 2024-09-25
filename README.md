@@ -28,6 +28,7 @@ There are also key phrases on which the bot replies:
 - Stares
 - Yes! I am!
 - NIGERUNDAYOOOO
+- AmBuLaNcE DAAA
 
 
 As well as every single JoJo:
