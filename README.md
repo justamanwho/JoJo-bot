@@ -22,6 +22,7 @@ There are also key phrases on which the bot replies:
 - I see.
 - OI JOSUKE
 - RERO RERO RERO
+- TuRuRuRuRu
 - WRYYYY
 - Your underwear is showing
 - How does It TASTE?
@@ -29,6 +30,7 @@ There are also key phrases on which the bot replies:
 - Yes! I am!
 - NIGERUNDAYOOOO
 - AmBuLaNcE DAAA
+- Lali-Ho
 
 
 As well as every single JoJo:
@@ -46,6 +48,8 @@ As well as every single JoJo:
 
 As well as every single Jojo Villain:
 ...
+As well as alot of Stands
+- The World
 
 
 There are also Easter eggs.

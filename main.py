@@ -14,7 +14,7 @@ data = {
                                      r'|w+h+a+t+[\W]*a+r+e+[\W]*y+o+u+[\W]*t+a+l+k+i+n+g+[\W]*a+b+o+u+t).*',
                                      re.IGNORECASE),
 
-    'the-world.gif': re.compile(r'.*(t+h+e+[\W]*w+o+r+l+d+|z+a+[\W]*w+a+r+u+d+o).*', re.IGNORECASE),
+    ('the-world.png', 'the-world.gif'): re.compile(r'.*(t+h+e+[\W]*w+o+r+l+d+|z+a+[\W]*w+a+r+u+d+o).*', re.IGNORECASE),
 
     'omg.jpg': re.compile(r'.*(o+m+g|o+(h+)?[\W]*m+y+[\W]*g+o+d+|o+(h+)?[\W]*s+h+i+t[\W]*).*', re.IGNORECASE),
 
@@ -36,10 +36,10 @@ data = {
 
     'i-see.png': re.compile(r'.*(I+[\W]*see+).*', re.IGNORECASE),
 
-    'rero-rero.jpg': re.compile(r'.*(r+e+r+o|r+e+r+e).*', re.IGNORECASE),
+    'rero-rero.jpg': re.compile(r'.*(r+e+r+o|r+e+r+e|l+e+r+o|l+e+r+e).*', re.IGNORECASE),
 
-    'your-underwear-is-showing.gif': re.compile(r'.*(Y+o+u+r+[\W]*U+n+d+e+r+w+e+a+r+[\W]*I+s+[\W]*S+h+o+w+i+n+g'
-                                                r'|I+[\W]*C+a+n+[\W]*S+e+e+[\W]*Y+o+u+r+[\W]*U+n+d+e+r+w+e+a+r).*',
+    'your-underwear-is-showing.gif': re.compile(r'.*(Y+o+u+r*[\W]*U+n+d+e+r+w+e*a*r+([\W]*I+s+)?[\W]*S+h+o+w+i+n+g*'
+                                                r'|I+[\W]*C+a+n+[\W]*S+e+e+[\W]*Y+o+u+r*[\W]*U+n+d+e+r+w+e*a*r).*',
                                                 re.IGNORECASE),
 
     'stares.jpg': re.compile(r'.*(s+t+a+r+e+s*|e+y+e+s).*', re.IGNORECASE),
@@ -56,6 +56,11 @@ data = {
     'road-roller.jpg': re.compile('.*(R+o+A+d+[\W]*R+o+L+L*e+R).*', re.IGNORECASE),
 
     'kono-dio-da.avif': re.compile('.*(K+o+n+o+[\W]*D+i+o+[\W]*D+a).*', re.IGNORECASE),
+
+    'tururu.png': re.compile('.*(T+u+r+u+r*u*).*', re.IGNORECASE),
+
+    'lali-ho.jpg': re.compile('.*(L+a+l+i+[\W]*h+o+).*', re.IGNORECASE),
+
 
     # Every JoJo
 
@@ -81,7 +86,30 @@ data = {
 
 
     # Every Villain
-    'Dio-1.png': re.compile(r'.*(D+I+O|B+r+a+n+d+o).*', re.IGNORECASE),
+
+    'Dio-1.png': re.compile(r'.*(B+r+a+n+d+o(?!3)|D+I+O+1).*', re.IGNORECASE),
+
+    'Kars.png': re.compile(r'.*(K+a+r+s).*', re.IGNORECASE),
+
+    'Dio-3.png': re.compile(r'.*(D+I+O|B+r+a+n+d+o+3).*', re.IGNORECASE),
+
+    'Kira-Yoshikage-1.png': re.compile(r'.*(K+i+r+a(?!2)|Y+o+s+h+i+k+a+g+e(?!2)).*', re.IGNORECASE),
+
+    'Kira-Yoshikage-2.png': re.compile(r'.*(K+o+s+a+k+u|K+a+w+a+j+i+r+i|K+i+r+a+2|Y+o+s+h+i+k+a+g+e+2).*', re.IGNORECASE),
+
+    'Diavolo.jpg': re.compile(r'.*(D+i+a+v+o+l+o).*', re.IGNORECASE),
+
+    'Doppio.jpg': re.compile(r'.*(D+o+p+p*i+o).*', re.IGNORECASE),
+
+    'Pucci.jpg': re.compile(r'.*(P+u+c+c*i).*', re.IGNORECASE),
+
+    'Valentine.png': re.compile(r'.*(F+u+n+n+y|V+a+l+e+n+t+i+n+e).*', re.IGNORECASE),
+
+
+    # Stands
+
+    'the-world.png': re.compile(r'.*(T+h+e+[\W]*W+o+r+l+d).*', re.IGNORECASE),
+
 
     # Responses on Digits
 
@@ -118,34 +146,54 @@ markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
 def message_reply(message):
     logger.info(f'Message is received: {message.text}')
 
-    data = match_file(message, message.text)
+    data = find_pattern(message, message.text)
+
     if data:
         message, filename = data
 
         if filename != 'README.md':
-            file_object = get_file_object(message, filename)
-            message, file, ext = file_object
+            if isinstance(filename, tuple):
+                files = get_file_objects(message, filename)
 
-            return send_file_by_name_ext(message, file, ext)
+                for file in files:
+                    message, object, ext = file
+                    send_file_by_name_ext(message, object, ext)
+
+            else:
+                file = get_file_object(message, filename)
+
+                message, object, ext = file
+                send_file_by_name_ext(message, object, ext)
+
         else:
             return send_start_message(message)
 
-    return error_handling(message)
+    else:
+        return error_handling(message)
 
 
 def preload_files() -> None:
     # Getting ready all files
-    for filename in data.keys():
+    for key in data.keys():
         try:
-            file_objects[filename] = open(f'static/{filename}', 'rb')
-            logger.info(f'File {filename} has been preloaded.')
+            if isinstance(key, tuple):
+                for filename in key:
+                    put_objects(filename)
+            else:
+                put_objects(key)
+
         except FileNotFoundError:
-            logger.error(f"File {filename} not found. Skipping...")
+            logger.error(f"File {key} not found. Skipping...")
 
     # Getting ready start message
     with open('README.md', 'r') as readme:
         global start_message
         start_message = readme.read()
+
+
+def put_objects(filename):
+    file_objects[filename] = open(f'static/{filename}', 'rb')
+    logger.info(f'File {filename} has been preloaded.')
 
 
 def close_files() -> None:
@@ -155,12 +203,22 @@ def close_files() -> None:
             logger.info(f"File {file_object.name} has been closed")
 
 
-def match_file(message, input_text):
-    for filename, pattern in data.items():
-        if pattern.match(input_text):
-            logger.info(f"Matched file: {filename}")
+def find_pattern(message, input_text):
+    for key, pattern in data.items():
+        filenames = key if isinstance(key, tuple) else (key)
 
-            return message, filename
+        output = match_file(message, input_text, pattern, filenames)
+        if output:
+            return output
+
+    return False
+
+
+def match_file(message, input_text, pattern, filenames):
+    if pattern.match(input_text):
+        logger.info(f"Matched file/s: {filenames}")
+
+        return message, filenames
     return False
 
 
@@ -174,6 +232,14 @@ def get_file_object(message, filename):
         return message, file_object, ext
     else:
         logger.error(f"File object for {filename} not available.")
+
+
+def get_file_objects(message, filenames):
+    files = []
+    for filename in filenames:
+        files.append(get_file_object(message, filename))
+
+    return files
 
 
 def send_file_by_name_ext(message, file_object, ext):
@@ -194,8 +260,6 @@ def send_file_by_name_ext(message, file_object, ext):
         bot.send_photo(message.chat.id, image)
 
     logger.info(f'File {file_object.name.split("/")[-1]} has been sent')
-
-    return True
 
 
 def send_start_message(message):
