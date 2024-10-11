@@ -1,4 +1,4 @@
-The bot, which... Fuck around and find out what it does yourself...
+Is This Bot A JoJo Reference?
 
 0. Zero seconds have left
 1. One Punch Man Ora Ora Ora
@@ -31,6 +31,7 @@ There are also key phrases on which the bot replies:
 - NIGERUNDAYOOOO
 - AmBuLaNcE DAAA
 - Lali-Ho
+- KONO DIO DAAA
 
 
 As well as every single JoJo:
