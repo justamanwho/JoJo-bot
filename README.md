@@ -32,6 +32,8 @@ There are also key phrases on which the bot replies:
 - AmBuLaNcE DAAA
 - Lali-Ho
 - KONO DIO DAAA
+- So It's The Same Type Of Stand
+- The Taste Of A Liar...
 
 
 As well as every single JoJo:
