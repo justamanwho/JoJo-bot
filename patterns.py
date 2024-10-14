@@ -68,9 +68,9 @@ patterns = {
         re.compile(".*((S+o+[\W]*)?I+t+'*s+[\W]*t+h+e+[\W]*s+a+m+e+[\W]*(t+y+p+e+[\W]*o+f+[\W]*)?s+t+a+n+d).*",
                    re.IGNORECASE),
 
-    'Key_Phrases/I-got-an-erection.jpg': re.compile('.*(I+[\W]*g+o+t+[\W]*a*n*[\W]*e+r+e+c+t+i+o+n).*', re.IGNORECASE),
+    'Key_Phrases/I-got-an-erection.png': re.compile('.*(I+[\W]*g+o+t+[\W]*a*n*[\W]*e+r+e+c+t+i+o+n).*', re.IGNORECASE),
 
-    'Key_Phrases/liar-taste': re.compile('.*(l+i+a+r|t+h+e+[\W]*t+a+s+t+e|).*', re.IGNORECASE),
+    'Key_Phrases/liar-taste.png': re.compile('.*(l+i+a+r|t+h+e+[\W]*t+a+s+t+e|).*', re.IGNORECASE),
 
 
     # Every JoJo
