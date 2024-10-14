@@ -1,8 +1,11 @@
+from typing import List, Tuple, Optional, Union, IO, Callable
 from telebot import TeleBot, types
+from dotenv import load_dotenv
+from patterns import patterns
 from io import BytesIO
 from PIL import Image
 import logging
-from patterns import patterns
+import os
 
 
 logger = logging.getLogger(__name__)
@@ -15,8 +18,9 @@ file_handler = logging.FileHandler(f'{logger.name}.log')
 logger.addHandler(file_handler)
 
 
-bot_name = 'my_digits_bot'
-token = open('token.txt').readline()
+load_dotenv('.env')
+bot_name: str = os.getenv('BOT_NAME')
+token: str = os.getenv('TOKEN')
 bot = TeleBot(token, threaded=True)
 markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
 
@@ -25,7 +29,7 @@ file_objects = dict()
 
 
 @bot.message_handler()
-def message_reply(msg):
+def message_reply(msg: types.Message) -> Optional[Callable]:
     global message
     message = msg
 
@@ -39,16 +43,14 @@ def message_reply(msg):
             return send_start_message()
 
         files = get_file_objects(filename) if isinstance(filename, tuple) else [get_file_object(filename)]
-        for file in files:
-            object, ext = file
-            send_file_by_name_ext(object, ext)
+        for file_object, ext in files:
+            send_file_by_name_ext(file_object, ext)
 
     except Exception:
         error_handling()
 
 
 def preload_files() -> None:
-    # Getting ready all files
     for key in patterns.keys():
         try:
             filenames = key if isinstance(key, tuple) else [key]
@@ -59,7 +61,6 @@ def preload_files() -> None:
         except FileNotFoundError:
             logger.error(f"File {key} not found. Skipping...")
 
-    # Getting ready start message
     with open('README.md', 'r') as readme:
         global start_message
         start_message = readme.read()
@@ -72,7 +73,7 @@ def close_files() -> None:
             logger.info(f"File {file_object.name} has been closed")
 
 
-def find_pattern(input_text):
+def find_pattern(input_text: str) -> Union[bool, List[str]]:
     for key, pattern in patterns.items():
         filenames = key if isinstance(key, tuple) else (key)
 
@@ -83,7 +84,7 @@ def find_pattern(input_text):
     return False
 
 
-def match_file(input_text, pattern, filenames):
+def match_file(input_text: str, pattern, filenames: List[str]) -> Union[bool, List[str]]:
     if pattern.match(input_text):
         logger.info(f"Matched file/s: {filenames}")
 
@@ -91,7 +92,7 @@ def match_file(input_text, pattern, filenames):
     return False
 
 
-def get_file_object(filename: str):
+def get_file_object(filename: str) -> Optional[Tuple[IO[bytes], str]]:
     file_object = file_objects.get(filename)
     ext = filename.split('.')[-1].lower()
 
@@ -103,11 +104,11 @@ def get_file_object(filename: str):
     logger.error(f"File object for {filename} not available.")
 
 
-def get_file_objects(filenames):
+def get_file_objects(filenames: tuple) -> List[Tuple[IO[bytes], str]]:
     return [get_file_object(filename) for filename in filenames]
 
 
-def send_file_by_name_ext(file_object, ext: str) -> None:
+def send_file_by_name_ext(file_object: IO[bytes], ext: str) -> None:
     if ext == 'gif':
         bot.send_animation(message.chat.id, file_object)
     elif ext == 'png':
@@ -127,12 +128,12 @@ def send_file_by_name_ext(file_object, ext: str) -> None:
     logger.info(f'File {file_object.name.split("/")[-1]} has been sent')
 
 
-def send_start_message():
+def send_start_message() -> None:
     bot.send_message(message.chat.id, start_message)
     logger.info(f'Start Message has been sent')
 
 
-def error_handling():
+def error_handling() -> None:
     logger.info(f'Incorrect message: {message.text}')
 
     bot.reply_to(message, 'Choose the digit from 0 to 9', reply_markup=markup)
@@ -145,6 +146,3 @@ if __name__ == '__main__':
     preload_files()
     bot.infinity_polling()
     close_files()
-
-# Note for the next time coding
-# I want to put annotations for every function
