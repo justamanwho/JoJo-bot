@@ -25,7 +25,7 @@ bot_name: str = os.getenv('BOT_NAME')
 token: str = os.getenv('BOT_TOKEN')
 bot = TeleBot(token, threaded=True)
 markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-webhook_url = f"https://your-app-url.com/{token}"
+webhook_url = f"https://jojo-telegram-bot-service-535954746773.us-central1.run.app/{token}"
 
 
 @app.route(f"/{token}", methods=['POST'])
