@@ -1,5 +1,6 @@
 from typing import List, Tuple, Optional, Union, IO, Callable
 from telebot import TeleBot, types
+from flask import Flask, request
 from dotenv import load_dotenv
 from patterns import patterns
 from io import BytesIO
@@ -19,10 +20,20 @@ logger.addHandler(file_handler)
 
 
 load_dotenv('.env')
+app = Flask(__name__)
 bot_name: str = os.getenv('BOT_NAME')
-token: str = os.getenv('TOKEN')
+token: str = os.getenv('BOT_TOKEN')
 bot = TeleBot(token, threaded=True)
 markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+webhook_url = f"https://your-app-url.com/{token}"
+
+
+@app.route(f"/{token}", methods=['POST'])
+def receive_update():
+    json_str = request.get_data().decode('UTF-8')
+    update = types.Update.de_json(json_str)
+    bot.process_new_updates([update])
+    return "!", 200
 
 
 file_objects = dict()
@@ -144,5 +155,7 @@ def error_handling() -> None:
 
 if __name__ == '__main__':
     preload_files()
-    bot.infinity_polling()
-    close_files()
+    # bot.infinity_polling()
+    bot.remove_webhook()
+    bot.set_webhook(url=webhook_url)
+    # close_files()

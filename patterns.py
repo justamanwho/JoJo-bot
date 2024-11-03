@@ -70,8 +70,9 @@ patterns = {
 
     'Key_Phrases/I-got-an-erection.png': re.compile('.*(I+[\W]*g+o+t+[\W]*a*n*[\W]*e+r+e+c+t+i+o+n).*', re.IGNORECASE),
 
-    'Key_Phrases/liar-taste.png': re.compile('.*(l+i+a+r|t+h+e+[\W]*t+a+s+t+e|).*', re.IGNORECASE),
+    'Key_Phrases/liar-taste.png': re.compile('.*(l+i+a+r|t+h+e+[\W]*t+a+s+t+e).*', re.IGNORECASE),
 
+    'Key_Phrases/tarot.png': re.compile('.*(t+a+r+o+t).*', re.IGNORECASE),
 
     # Every JoJo
 
