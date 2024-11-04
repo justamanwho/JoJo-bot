@@ -10,14 +10,24 @@ import os
 
 
 logger = logging.getLogger(__name__)
-logging.basicConfig(
-    level=logging.DEBUG,
-    format='%(levelname)s | %(name)s | %(asctime)s | %(message)s',
-    datefmt='%H:%M:%S'
-)
-file_handler = logging.FileHandler(f'{logger.name}.log')
-logger.addHandler(file_handler)
+logger.setLevel(logging.DEBUG)  # Set the level for the logger itself
 
+# Create console handler
+console_handler = logging.StreamHandler()
+console_handler.setLevel(logging.DEBUG)
+
+# Create file handler and set level to DEBUG
+file_handler = logging.FileHandler(f'{logger.name}.log')
+file_handler.setLevel(logging.DEBUG)
+
+# Define formatter and add it to handlers
+formatter = logging.Formatter('%(levelname)s | %(name)s | %(asctime)s | %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
+console_handler.setFormatter(formatter)
+file_handler.setFormatter(formatter)
+
+# Add handlers to logger
+logger.addHandler(console_handler)
+logger.addHandler(file_handler)
 
 load_dotenv('.env')
 bot_name: str = os.getenv('BOT_NAME')
@@ -51,8 +61,10 @@ def message_reply(msg: types.Message) -> Optional[Callable]:
         data = find_pattern(message.text)
         filename = data
 
-        if filename == 'README.md':
+        if filename == 'start_message.txt':
             return send_start_message()
+        elif filename == 'commands_list.txt':
+            return send_commands_list()
 
         files = get_file_objects(filename) if isinstance(filename, tuple) else [get_file_object(filename)]
         for file_object, ext in files:
@@ -64,6 +76,9 @@ def message_reply(msg: types.Message) -> Optional[Callable]:
 
 def preload_files() -> None:
     for key in patterns.keys():
+        if '.txt' in key:
+            continue
+
         try:
             filenames = key if isinstance(key, tuple) else [key]
             for filename in filenames:
@@ -73,9 +88,12 @@ def preload_files() -> None:
         except FileNotFoundError:
             logger.error(f"File {key} not found. Skipping...")
 
-    with open('README.md', 'r') as readme:
-        global start_message
-        start_message = readme.read()
+    with open('start_message.txt', 'r') as start:
+        with open('commands_list.txt', 'r') as commands:
+            global start_message
+            global commands_list
+            start_message = start.read()
+            commands_list = commands.read()
 
 
 def close_files() -> None:
@@ -145,10 +163,15 @@ def send_start_message() -> None:
     logger.info(f'Start Message has been sent')
 
 
+def send_commands_list() -> None:
+    bot.send_message(message.chat.id, commands_list)
+    logger.info(f'Commands List has been sent')
+
+
 def error_handling() -> None:
     logger.info(f'Incorrect message: {message.text}')
 
-    bot.reply_to(message, 'Choose the digit from 0 to 9', reply_markup=markup)
+    bot.reply_to(message, 'Type any digit from 0 to 9 or jojo reference', reply_markup=markup)
     img, ext = get_file_object('Key_Phrases/wtf-am-i-reading.jpg')
 
     send_file_by_name_ext(img, ext)

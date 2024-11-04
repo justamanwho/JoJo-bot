@@ -1,7 +1,10 @@
 import re
 
 patterns = {
-    'README.md': re.compile('.*(s+t+a+r+t|h+e+l+p|h+e+l+l*o).*', re.IGNORECASE),
+    'start_message.txt': re.compile('.*(s+t+a+r+t|h+e+l+p|h+e+l+l*o).*', re.IGNORECASE),
+
+    'commands_list.txt': re.compile('.*(c+o+m+m+a+n+d+s|K+e+y+[\W]*P+h+r+a+s+e+s).*', re.IGNORECASE),
+
 
     # Key Phrases
 
@@ -60,7 +63,7 @@ patterns = {
 
     'Key_Phrases/tururu.png': re.compile('.*(T+u+r+u+r*u*).*', re.IGNORECASE),
 
-    'Key_Phrases/lali-ho.jpg': re.compile('.*(L+a+l+i+[\W]*h+o+).*', re.IGNORECASE),
+    'Key_Phrases/lali-ho.jpg': re.compile('.*(L+a+l+i+[\W]*h+o+|D+e+a+t+h).*', re.IGNORECASE),
 
     'Key_Phrases/how-does-it-taste.jpg': re.compile('.*(H+o+w+[\W]*d+o+e+s+[\W]*i+t+[\W]*t+a+s+t+e).*', re.IGNORECASE),
 
@@ -72,7 +75,8 @@ patterns = {
 
     'Key_Phrases/liar-taste.png': re.compile('.*(l+i+a+r|t+h+e+[\W]*t+a+s+t+e).*', re.IGNORECASE),
 
-    'Key_Phrases/tarot.png': re.compile('.*(t+a+r+o+t).*', re.IGNORECASE),
+    'Key_Phrases/tarot.png': re.compile('.*(t+a+r+o+t*).*', re.IGNORECASE),
+
 
     # Every JoJo
 
@@ -132,12 +136,14 @@ patterns = {
 
     'Characters/Speedwagon.jpg': re.compile(r'.*(S+p+e+e+d+w+a+g+o+n).*', re.IGNORECASE),
 
+
     # Responses on Digits
 
     'Digits/0.gif': re.compile(r'.?0.?'), 'Digits/1.png': re.compile(r'.?1.?'), 'Digits/2.jpg': re.compile(r'.?2.?'),
     'Digits/3.jpg': re.compile(r'.?3.?'), 'Digits/4.jpg': re.compile(r'.?4.?'), 'Digits/5.jpg': re.compile(r'.?5.?'),
     'Digits/6.jpg': re.compile(r'.?6.?'), 'Digits/7.png': re.compile(r'.?7.?'), 'Digits/8.jpg': re.compile(r'.?8.?'),
     'Digits/9.png': re.compile(r'.?9.?'),
+
 
     # Error Handling
 
