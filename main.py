@@ -20,20 +20,21 @@ logger.addHandler(file_handler)
 
 
 load_dotenv('.env')
-app = Flask(__name__)
 bot_name: str = os.getenv('BOT_NAME')
 token: str = os.getenv('BOT_TOKEN')
 bot = TeleBot(token, threaded=True)
 markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-webhook_url = f"https://jojo-telegram-bot-service-535954746773.us-central1.run.app/{token}"
 
-
-@app.route(f"/{token}", methods=['POST'])
-def receive_update():
-    json_str = request.get_data().decode('UTF-8')
-    update = types.Update.de_json(json_str)
-    bot.process_new_updates([update])
-    return "!", 200
+# app = Flask(__name__)
+# webhook_url = f"http://jojo-telegram-bot-service-535954746773.us-central1.run.app/{token}"
+#
+#
+# @app.route(f"/{token}", methods=['POST'])
+# def receive_update():
+#     json_str = request.get_data().decode('UTF-8')
+#     update = types.Update.de_json(json_str)
+#     bot.process_new_updates([update])
+#     return "!", 200
 
 
 file_objects = dict()
@@ -155,7 +156,8 @@ def error_handling() -> None:
 
 if __name__ == '__main__':
     preload_files()
-    # bot.infinity_polling()
-    bot.remove_webhook()
-    bot.set_webhook(url=webhook_url)
-    # close_files()
+    # bot.remove_webhook()
+    bot.infinity_polling()
+    # bot.set_webhook(url=webhook_url)
+    # app.run(host='0.0.0.0', port=8080)
+    close_files()
