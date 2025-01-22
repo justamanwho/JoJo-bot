@@ -75,7 +75,7 @@ patterns = {
 
     'Key_Phrases/liar-taste.png': re.compile('.*(l+i+a+r|t+h+e+[\W]*t+a+s+t+e).*', re.IGNORECASE),
 
-    'Key_Phrases/tarot.png': re.compile('.*(t+a+r+o+t*).*', re.IGNORECASE),
+    'Key_Phrases/tarot.png': re.compile('.*(t+a+r+o+t+).*', re.IGNORECASE),
 
     'Key_Phrases/stand-power.jpg': re.compile('.*(s+t+a+n+d[\W]*(p+o+w+e+r|p+o+w+a+h)).*', re.IGNORECASE),
 
