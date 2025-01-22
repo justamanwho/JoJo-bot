@@ -77,6 +77,8 @@ patterns = {
 
     'Key_Phrases/tarot.png': re.compile('.*(t+a+r+o+t*).*', re.IGNORECASE),
 
+    'Key_Phrases/stand-power.jpg': re.compile('.*(s+t+a+n+d[\W]*(p+o+w+e+r|p+o+w+a+h)).*', re.IGNORECASE),
+
 
     # Every JoJo
 

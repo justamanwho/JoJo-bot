@@ -10,24 +10,14 @@ import os
 
 
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)  # Set the level for the logger itself
+logger.setLevel(logging.DEBUG)
+handlers = [logging.StreamHandler(), logging.FileHandler(f'{logger.name}.log')]
 
-# Create console handler
-console_handler = logging.StreamHandler()
-console_handler.setLevel(logging.DEBUG)
+for handler in handlers:
+    handler.setLevel(logging.DEBUG)
+    handler.setFormatter(logging.Formatter('%(levelname)s | %(name)s | %(asctime)s | %(message)s', datefmt='%Y-%m-%d %H:%M:%S'))
+    logger.addHandler(handler)
 
-# Create file handler and set level to DEBUG
-file_handler = logging.FileHandler(f'{logger.name}.log')
-file_handler.setLevel(logging.DEBUG)
-
-# Define formatter and add it to handlers
-formatter = logging.Formatter('%(levelname)s | %(name)s | %(asctime)s | %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
-console_handler.setFormatter(formatter)
-file_handler.setFormatter(formatter)
-
-# Add handlers to logger
-logger.addHandler(console_handler)
-logger.addHandler(file_handler)
 
 load_dotenv('.env')
 bot_name: str = os.getenv('BOT_NAME')
