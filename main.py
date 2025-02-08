@@ -29,8 +29,6 @@ markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
 
 app = Flask(__name__)
 webhook_url = f"https://astrotaroelin.com/{token}"
-requests.get(f"https://api.telegram.org/bot{token}/setWebhook?url={webhook_url}")
-
 
 @app.route(f"/{token}", methods=['POST'])
 def receive_update():
@@ -38,6 +36,7 @@ def receive_update():
     update = types.Update.de_json(json_str)
     bot.process_new_updates([update])
     return "!", 200
+
 
 file_objects = dict()
 
@@ -172,11 +171,10 @@ def error_handling() -> None:
 if __name__ == '__main__':
     preload_files()
 
+    # bot.infinity_polling()
+
     bot.remove_webhook()
-    # bot.infinity_polling()
-    # bot.set_webhook(url=webhook_url)
-    # app.run(host='0.0.0.0', port=8080)
-    # bot.infinity_polling()
-    app.run(host='0.0.0.0', port=443)
+    bot.set_webhook(url=webhook_url)
+    app.run(host='0.0.0.0', port=8443)
 
     close_files()
