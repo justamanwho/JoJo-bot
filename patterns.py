@@ -11,7 +11,8 @@ patterns = {
     'Key_Phrases/your-next-line.png':
         re.compile(r'.*(a+m+[\W]*i+[\W]*r+e+a+d+i+n|w+h+a+t+[\W]*t+h+e+[\W]*f+u+c+k+|w+t+f'
                    r'|w+h+a+t+[\W]*a+r+e+[\W]*y+o+u+[\W]*t+a+l+k+i+n+g+[\W]*a+b+o+u+t'
-                   r'|A+n+d+[\W]*y+o+u+r*[\W]*n+e+x+t+[\W]*l+i+n+e+[\W]*i+s).*',
+                   r'|A+n+d+[\W]*y+o+u+r*[\W]*n+e+x+t+[\W]*l+i+n+e+[\W]*i+s'
+                   r'|j+o+j+o+[\W]*r+e+f+e+r+e+n+c+e).*',
                    re.IGNORECASE),
 
     ('Stands/the-world.png', 'Key_Phrases/the-world.gif'):

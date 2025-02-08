@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 from patterns import patterns
 from io import BytesIO
 from PIL import Image
+import requests
 import logging
 import os
 
@@ -25,17 +26,18 @@ token: str = os.getenv('BOT_TOKEN')
 bot = TeleBot(token, threaded=True)
 markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
 
-# app = Flask(__name__)
-# webhook_url = f"http://jojo-telegram-bot-service-535954746773.us-central1.run.app/{token}"
-#
-#
-# @app.route(f"/{token}", methods=['POST'])
-# def receive_update():
-#     json_str = request.get_data().decode('UTF-8')
-#     update = types.Update.de_json(json_str)
-#     bot.process_new_updates([update])
-#     return "!", 200
 
+app = Flask(__name__)
+webhook_url = f"https://astrotaroelin.com/{token}"
+requests.get(f"https://api.telegram.org/bot{token}/setWebhook?url={webhook_url}")
+
+
+@app.route(f"/{token}", methods=['POST'])
+def receive_update():
+    json_str = request.get_data().decode('UTF-8')
+    update = types.Update.de_json(json_str)
+    bot.process_new_updates([update])
+    return "!", 200
 
 file_objects = dict()
 
@@ -161,7 +163,7 @@ def send_commands_list() -> None:
 def error_handling() -> None:
     logger.info(f'Incorrect message: {message.text}')
 
-    bot.reply_to(message, 'Type any digit from 0 to 9 or jojo reference', reply_markup=markup)
+    bot.reply_to(message, 'Type jojo reference or any digit from 0 to 9', reply_markup=markup)
     img, ext = get_file_object('Key_Phrases/wtf-am-i-reading.jpg')
 
     send_file_by_name_ext(img, ext)
@@ -169,8 +171,12 @@ def error_handling() -> None:
 
 if __name__ == '__main__':
     preload_files()
-    # bot.remove_webhook()
-    bot.infinity_polling()
+
+    bot.remove_webhook()
+    # bot.infinity_polling()
     # bot.set_webhook(url=webhook_url)
     # app.run(host='0.0.0.0', port=8080)
+    # bot.infinity_polling()
+    app.run(host='0.0.0.0', port=443)
+
     close_files()
