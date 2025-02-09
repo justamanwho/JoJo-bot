@@ -26,7 +26,6 @@ token: str = os.getenv('BOT_TOKEN')
 bot = TeleBot(token, threaded=True)
 markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
 
-
 app = Flask(__name__)
 webhook_url = f"https://astrotaroelin.com/{token}"
 
