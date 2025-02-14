@@ -1,6 +1,6 @@
 from typing import List, Tuple, Optional, Union, IO, Callable
 from telebot import TeleBot, types
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from dotenv import load_dotenv
 from patterns import patterns
 from io import BytesIO
@@ -27,14 +27,15 @@ bot = TeleBot(token, threaded=True)
 markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
 
 app = Flask(__name__)
-webhook_url = f"https://astrotaroelin.com/{token}"
+WEBHOOK_URL = f"https://astrotaroelin.com/jojo-webhook"
 
-@app.route(f"/{token}", methods=['POST'])
+@app.route(f"/jojo-webhook", methods=['POST'])
 def receive_update():
-    json_str = request.get_data().decode('UTF-8')
-    update = types.Update.de_json(json_str)
+    update = request.get_json()
+    update = types.Update.de_json(update)
     bot.process_new_updates([update])
-    return "!", 200
+
+    return jsonify({"status": "ok"}), 200
 
 
 file_objects = dict()
@@ -172,8 +173,8 @@ if __name__ == '__main__':
 
     # bot.infinity_polling()
 
-    bot.remove_webhook()
-    bot.set_webhook(url=webhook_url)
-    app.run(host='0.0.0.0', port=8443)
+    response = requests.get(f"https://api.telegram.org/bot{token}/setWebhook?url={WEBHOOK_URL}")
+    print(response.json())
+    app.run(host='127.0.0.1', port=8443)
 
     close_files()
