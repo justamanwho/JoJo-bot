@@ -29,6 +29,33 @@ markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
 app = Flask(__name__)
 WEBHOOK_URL = f"https://astrotaroelin.com/jojo-webhook"
 
+
+file_objects = dict()
+
+def preload_files() -> None:
+    for key in patterns.keys():
+        if '.txt' in key:
+            continue
+
+        try:
+            filenames = key if isinstance(key, tuple) else [key]
+            for filename in filenames:
+                file_objects[filename] = open(f'static/{filename}', 'rb')
+                logger.info(f'File {filename} has been preloaded.')
+
+        except FileNotFoundError:
+            logger.error(f"File {key} not found. Skipping...")
+
+    with open('start_message.txt', 'r') as start:
+        with open('commands_list.txt', 'r') as commands:
+            global start_message
+            global commands_list
+            start_message = start.read()
+            commands_list = commands.read()
+
+
+preload_files()
+
 @app.route(f"/jojo-webhook", methods=['POST'])
 def receive_update():
     update = request.get_json()
@@ -36,9 +63,6 @@ def receive_update():
     bot.process_new_updates([update])
 
     return jsonify({"status": "ok"}), 200
-
-
-file_objects = dict()
 
 
 @bot.message_handler()
@@ -64,27 +88,6 @@ def message_reply(msg: types.Message) -> Optional[Callable]:
     except Exception:
         error_handling()
 
-
-def preload_files() -> None:
-    for key in patterns.keys():
-        if '.txt' in key:
-            continue
-
-        try:
-            filenames = key if isinstance(key, tuple) else [key]
-            for filename in filenames:
-                file_objects[filename] = open(f'static/{filename}', 'rb')
-                logger.info(f'File {filename} has been preloaded.')
-
-        except FileNotFoundError:
-            logger.error(f"File {key} not found. Skipping...")
-
-    with open('start_message.txt', 'r') as start:
-        with open('commands_list.txt', 'r') as commands:
-            global start_message
-            global commands_list
-            start_message = start.read()
-            commands_list = commands.read()
 
 
 def close_files() -> None:
@@ -121,8 +124,8 @@ def get_file_object(filename: str) -> Optional[Tuple[IO[bytes], str]]:
         file_object.seek(0)
 
         return file_object, ext
-
-    logger.error(f"File object for {filename} not available.")
+    
+    logger.error(f"File object for {filename} not available. {file_objects}")
 
 
 def get_file_objects(filenames: tuple) -> List[Tuple[IO[bytes], str]]:
