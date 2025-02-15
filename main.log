@@ -1,0 +1,5 @@
+INFO | main | 2025-02-15 01:24:15 | Message is received: Yare Yare
+INFO | main | 2025-02-15 01:24:15 | Matched file/s: Key_Phrases/yare-yare.jpg
+ERROR | main | 2025-02-15 01:24:15 | File object for Key_Phrases/yare-yare.jpg not available.
+INFO | main | 2025-02-15 01:24:15 | Incorrect message: Yare Yare
+ERROR | main | 2025-02-15 01:24:15 | File object for Key_Phrases/wtf-am-i-reading.jpg not available.
