@@ -21,13 +21,13 @@ for handler in handlers:
 
 
 load_dotenv('.env')
-bot_name: str = os.getenv('BOT_NAME')
-token: str = os.getenv('BOT_TOKEN')
-bot = TeleBot(token, threaded=True)
-markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+WEBHOOK_URL: str = os.getenv('BOT_WEBHOOK')
+BOT_NAME: str = os.getenv('BOT_NAME')
+TOKEN: str = os.getenv('BOT_TOKEN')
 
+markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+bot = TeleBot(TOKEN, threaded=True)
 app = Flask(__name__)
-WEBHOOK_URL = f"https://astrotaroelin.com/jojo-webhook"
 
 
 file_objects = dict()
@@ -176,7 +176,7 @@ if __name__ == '__main__':
 
     # bot.infinity_polling()
 
-    response = requests.get(f"https://api.telegram.org/bot{token}/setWebhook?url={WEBHOOK_URL}")
+    response = requests.get(f"https://api.telegram.org/bot{TOKEN}/setWebhook?url={WEBHOOK_URL}")
     print(response.json())
     app.run(host='127.0.0.1', port=8443)
 

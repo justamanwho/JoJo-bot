@@ -457,3 +457,9 @@ INFO | main | 2025-02-15 23:52:02 | Message is received: Za Warudo
 INFO | main | 2025-02-15 23:52:02 | Matched file/s: ('Stands/the-world.png', 'Key_Phrases/the-world.gif')
 INFO | main | 2025-02-15 23:52:03 | File the-world.png has been sent
 INFO | main | 2025-02-15 23:52:11 | File the-world.gif has been sent
+INFO | main | 2025-02-15 23:54:07 | Message is received: Joseph
+INFO | main | 2025-02-15 23:54:07 | Matched file/s: Joestars/Joseph.png
+INFO | main | 2025-02-15 23:54:08 | File Joseph.png has been sent
+INFO | main | 2025-02-16 02:17:21 | Message is received: 0
+INFO | main | 2025-02-16 02:17:21 | Matched file/s: Digits/0.gif
+INFO | main | 2025-02-16 02:17:24 | File 0.gif has been sent
