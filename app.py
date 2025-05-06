@@ -23,11 +23,13 @@ for handler in handlers:
 load_dotenv('.env')
 bot_name: str = os.getenv('BOT_NAME')
 token: str = os.getenv('BOT_TOKEN')
+WEBHOOK_URL: str = os.getenv('BOT_WEBHOOK')
+
 bot = TeleBot(token, threaded=True)
 markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
 
 app = Flask(__name__)
-WEBHOOK_URL = f"https://astrotaroelin.com/jojo-webhook"
+
 
 @app.route(f"/jojo-webhook", methods=['POST'])
 def receive_update():
