@@ -22,8 +22,8 @@ for handler in handlers:
 
 load_dotenv('.env')
 BOT_WEBHOOK: str = os.getenv('BOT_WEBHOOK')
-BOT_NAME: str = os.getenv('BOT_NAME')
 BOT_TOKEN: str = os.getenv('BOT_TOKEN')
+BOT_NAME: str = os.getenv('BOT_NAME')
 
 markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
 bot = TeleBot(BOT_TOKEN, threaded=True)
