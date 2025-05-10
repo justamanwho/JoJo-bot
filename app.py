@@ -21,12 +21,12 @@ for handler in handlers:
 
 
 load_dotenv('.env')
-WEBHOOK_URL: str = os.getenv('BOT_WEBHOOK')
+BOT_WEBHOOK: str = os.getenv('BOT_WEBHOOK')
 BOT_NAME: str = os.getenv('BOT_NAME')
-TOKEN: str = os.getenv('BOT_TOKEN')
+BOT_TOKEN: str = os.getenv('BOT_TOKEN')
 
 markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-bot = TeleBot(TOKEN, threaded=True)
+bot = TeleBot(BOT_TOKEN, threaded=True)
 app = Flask(__name__)
 
 file_objects = dict()
@@ -178,7 +178,7 @@ if __name__ == '__main__':
 
     # bot.infinity_polling()
 
-    response = requests.get(f"https://api.telegram.org/bot{TOKEN}/setWebhook?url={WEBHOOK_URL}")
+    response = requests.get(f"https://api.telegram.org/bot{BOT_TOKEN}/setWebhook?url={BOT_WEBHOOK}")
     print(response.json())
     app.run(host='127.0.0.1', port=8443)
 
