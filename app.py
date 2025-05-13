@@ -1,12 +1,13 @@
 from typing import List, Tuple, Optional, Union, IO, Callable
-from telebot import TeleBot, types
 from flask import Flask, request, jsonify
+from telebot import TeleBot, types
 from dotenv import load_dotenv
 from patterns import patterns
 from io import BytesIO
 from PIL import Image
 import requests
 import logging
+import atexit
 import os
 
 
@@ -27,7 +28,17 @@ BOT_NAME: str = os.getenv('BOT_NAME')
 
 markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
 bot = TeleBot(BOT_TOKEN, threaded=True)
+
 app = Flask(__name__)
+logger.info("Website is live")
+
+
+def app_shutdown():
+    logger.info("Website is shut down")
+
+
+atexit.register(app_shutdown)
+
 
 file_objects = dict()
 
