@@ -13,7 +13,7 @@ import os
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
-handlers = [logging.StreamHandler(), logging.FileHandler(f'{logger.name}.log')]
+handlers = [logging.StreamHandler(), logging.FileHandler(f'app.log')]
 
 for handler in handlers:
     handler.setLevel(logging.DEBUG)
