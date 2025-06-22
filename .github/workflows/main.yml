@@ -22,7 +22,7 @@ jobs:
           cd ${{ secrets.WORK_DIR }}
           git checkout ${{ secrets.MAIN_BRANCH }}
           git pull
-          sudo systemctl restart personal-website
+          sudo systemctl restart jojo-bot
         EOF
 
     - name: Cleanup SSH
