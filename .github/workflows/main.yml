@@ -3,24 +3,27 @@ on:
     branches:
       - master
   workflow_dispatch:
-  
+
 jobs:
-  run_pull:
-    name: run pull
+  deploy:
+    name: Pull and restart service
     runs-on: ubuntu-latest
     
     steps:
-      - name: Install SSH keys
-        run: |
-          mkdir -p ~/.ssh
-          printf "%s" "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
+    - name: Install SSH key
+      run: |
+        install -m 600 -D /dev/null ~/.ssh/id_rsa
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
 
+    - name: SSH and deploy
+      run: |
+        ssh -t ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
+          cd ${{ secrets.WORK_DIR }}
+          git checkout ${{ secrets.MAIN_BRANCH }}
+          git pull
+          sudo systemctl restart personal-website
+        EOF
 
-
-      - name: Connect and pull
-        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && git checkout ${{ secrets.MAIN_BRANCH }} && git pull"
-
-      - name: Cleanup
-        run: rm -rf ~/.ssh
+    - name: Cleanup SSH
+      run: rm -rf ~/.ssh
