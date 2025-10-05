@@ -6,9 +6,9 @@ on:
 
 jobs:
   deploy:
-    name: Pull and restart service
+    name: Hard pull and restart service
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Install SSH key
       run: |
@@ -19,9 +19,10 @@ jobs:
     - name: SSH and deploy
       run: |
         ssh -t ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
+          set -e
           cd ${{ secrets.WORK_DIR }}
-          git checkout ${{ secrets.MAIN_BRANCH }}
-          git pull
+          git fetch origin ${{ secrets.MAIN_BRANCH }}
+          git reset --hard origin/${{ secrets.MAIN_BRANCH }}
           sudo systemctl restart jojo-bot
         EOF
 
