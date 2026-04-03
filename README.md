@@ -6,5 +6,7 @@ This Bot Sends You The JoJo Reference In PNG or GIF format as Response to Your T
 
 Link: https://t.me/jojo_references_bot
 
+<img width="382" height="1009" alt="JoJo-bot" src="https://github.com/user-attachments/assets/29f291b0-e193-4e70-9c33-afa01265d3ad" />
+
+
 P.S. If you see any JoJo reference here, then go to the therapist. There is no such thing.
-<img width="388" height="1010" alt="Chess-bot" src="https://github.com/user-attachments/assets/23abebc5-1718-4dab-bd00-ed5a551413f3" />
