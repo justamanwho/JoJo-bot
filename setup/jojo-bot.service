@@ -1,0 +1,15 @@
+[Unit]
+Description=Gunicorn instance to serve JoJo-bot
+After=network.target
+
+[Service]
+User=ec2-user
+Group=ec2-user
+WorkingDirectory=/home/ec2-user/JoJo-bot
+Environment="PATH=/home/ec2-user/JoJo-bot/venv/bin"
+ExecStart=/home/ec2-user/JoJo-bot/venv/bin/gunicorn --workers 3 --bind 127.0.0.1:8443 app:app
+Restart=always
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

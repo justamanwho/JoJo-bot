@@ -187,10 +187,16 @@ def error_handling() -> None:
 if __name__ == '__main__':
     preload_files()
 
-    # bot.infinity_polling()
+    # Webhook section
 
+    # bot.remove_webhook()
     response = requests.get(f"https://api.telegram.org/bot{BOT_TOKEN}/setWebhook?url={BOT_WEBHOOK}")
-    print(response.json())
-    app.run(host='127.0.0.1', port=8443)
+    # print(response.json())
+    # app.run(host='127.0.0.1', port=8443)
+
+
+    # Uncomment this for local testing
+
+    #bot.infinity_polling()
 
     close_files()
